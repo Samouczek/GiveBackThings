@@ -1,3 +1,6 @@
-body {
-  color: red;
-}
+@import "generic/reset";
+
+@import "settings/fonts";
+@import "settings/colors";
+
+@import "elements/base";

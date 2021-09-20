@@ -1,0 +1,106 @@
+
+.steps-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .steps-title{
+    text-align: center;
+    letter-spacing: -0.76px;
+    font-size: 2.375rem;
+    line-height: 3.4375rem;
+    padding-top: 3.4375rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .image-steps-decoration{
+    height: 2.0625rem;
+    width: 15.8125rem;
+    background: transparent url('../../assets/Decoration.svg') 0 0 no-repeat padding-box;
+  }
+
+  .steps{
+    margin-top: 2.125rem;
+    width: 100%;
+    background-color: $color-almost-white;
+    padding-bottom: 3.875rem;
+
+    .step{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    .step-title{
+      font-size: 1.125rem;
+      text-align: center;
+      line-height: 1.5rem;
+    }
+    .step-line{
+      width: 4.375rem;
+      height: 1rem;
+      border-bottom: 0.0625rem solid $color-border;
+      margin: 0 auto;
+      margin-bottom: 0.625rem;
+    }
+    .step-text{
+      font-size: 1rem;
+      text-align: center;
+      line-height: 1.125rem;
+    }
+
+    .step--first{
+      &:before {
+        content: url("../../assets/Icon-1.svg");
+        width: 5.1875rem;
+        height: 5.1875rem;
+        margin: 0 auto;
+        padding-bottom: 0.75rem;
+      }
+    }
+    .step--second{
+      &:before{
+        content: url("../../assets/Icon-2.svg");
+        width: 5.1875rem;
+        height: 5.1875rem;
+        margin: 0 auto;
+        padding-bottom: 0.75rem;
+      }
+    }
+    .step--third{
+      &:before{
+        content: url("../../assets/Icon-3.svg");
+        width: 5.1875rem;
+        height: 5.1875rem;
+        margin: 0 auto;
+        padding-bottom: 0.75rem;
+      }
+    }
+    .step--fourth{
+      &:before{
+        content: url("../../assets/Icon-4.svg");
+        width: 5.1875rem;
+        height: 5.1875rem;
+        margin: 0 auto;
+        padding-bottom: 0.75rem;
+      }
+    }
+  }
+
+  .btn-steps{
+    width: 19.375rem;
+    height: 7.5rem;
+    background-color: $color-white;
+    border: 0.75px solid $color-gray;
+    text-transform: uppercase;
+    font-size: 2.25rem;
+    line-height: 2.8125rem;
+    font-weight: 300;
+    margin: 2.1875rem;
+    justify-items: center;
+    align-items: center;
+  }
+}

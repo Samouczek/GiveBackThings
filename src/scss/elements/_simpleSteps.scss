@@ -33,6 +33,7 @@
       justify-content: center;
       padding-left: 2rem;
       padding-right: 2rem;
+      flex-grow: 1;
     }
     .step-title{
       font-size: 1.125rem;
@@ -102,5 +103,19 @@
     margin: 2.1875rem;
     justify-items: center;
     align-items: center;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .steps{
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .steps{
+    padding-left: 25rem;
+    padding-right: 25rem;
   }
 }

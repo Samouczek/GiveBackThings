@@ -1,3 +1,19 @@
-body {
+html, body {
   font-family: $font-base;
+  background-color: $color-white;
+  color: $color-dark-gray;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1900px;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.header {
+  margin-right: 8.875rem;
 }

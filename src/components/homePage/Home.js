@@ -10,7 +10,6 @@ import Footer from "../Footer";
 function Home() {
     return (
       <>
-          Home page
           <HomeHeader />
           <HomeThreeColumns />
           <HomeSimpleSteps />

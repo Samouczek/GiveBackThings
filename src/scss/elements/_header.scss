@@ -7,11 +7,11 @@
   display: flex;
   flex-direction: column;
   align-content: center;
+  margin-bottom: 0;
 }
 
 .image-header {
   width: 85.5rem;
-  height: 60.1875rem;
   background: transparent url('../../assets/Home-Hero-Image.jpg') 0 0 no-repeat padding-box;
   background-size: cover;
   opacity: 1;
@@ -39,6 +39,7 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 16.9375rem;
 }
 
 .btn-home_header{

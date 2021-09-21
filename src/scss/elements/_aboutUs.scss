@@ -12,7 +12,7 @@
 
     .about-us-title{
       text-align: center;
-      font-size: 2.375rem;
+      font-size: 2rem;
       line-height: 3.4375rem;
       letter-spacing: -0.76px;
     }
@@ -22,12 +22,12 @@
       width: 15.8125rem;
       background: transparent url('../../assets/Decoration.svg') no-repeat padding-box;
       padding-top: 1.625rem;
-      padding-bottom: 3.4375rem;
+      padding-bottom: 2rem;
     }
     .about-us-text{
       text-align: center;
-      font-size: 1.875rem;
-      line-height: 3.375rem;
+      font-size: 1.25rem;
+      line-height: 2.5em;
       letter-spacing: -0.6px;
       padding-bottom: 2.5rem
     }
@@ -50,11 +50,24 @@
 
 @media (min-width: $breakpoint-sm) {
   .about-us-section{
-    .about-us-image{
-      min-height: 30rem;
-      background: transparent url('../../assets/People.jpg') no-repeat padding-box;
-      margin-top: 0;
-      background-position: center;
+    .about-us-content {
+      .about-us-title{
+        font-size: 2.375rem;
+      }
+      .about-us-image-decoration{
+        padding-bottom: 3.4375rem;
+      }
+      .about-us-text {
+        font-size: 1.875rem;
+        line-height: 3.375rem;
+      }
+      
+      .about-us-image {
+        min-height: 30rem;
+        background: transparent url('../../assets/People.jpg') no-repeat padding-box;
+        margin-top: 0;
+        background-position: center;
+      }
     }
   }
 }

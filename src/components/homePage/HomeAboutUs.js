@@ -2,16 +2,18 @@
 export default function HomeAboutUs() {
     return (
         <div className='container about-us-section'>
-            <div className='about-us-content col-md-6 col-sm-12'>
-                <h2 className='about-us-title'>O nas</h2>
-                <div className='about-us-image-decoration'> </div>
-                <p className='about-us-text'>
-                    Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts
-                    black-eyed pea prairie turnip leek lentil turnip greens parsnip.
-                </p>
-                <div className='about-us-signature'> </div>
+            <div className='row'>
+                <div className='about-us-content col-md-6 col-sm-12'>
+                    <h2 className='about-us-title'>O nas</h2>
+                    <div className='about-us-image-decoration'> </div>
+                    <p className='about-us-text'>
+                        Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts
+                        black-eyed pea prairie turnip leek lentil turnip greens parsnip.
+                    </p>
+                    <div className='about-us-signature'> </div>
+                </div>
+                <div  className='about-us-image col-md-6 col-sm-12'> </div>
             </div>
-            <div  className='about-us-image col-md-6 col-sm-12'> </div>
         </div>
     )
 }

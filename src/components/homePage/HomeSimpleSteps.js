@@ -3,7 +3,7 @@ import {LOG_IN} from "../../constants/Route";
 
 export default function HomeSimpleSteps() {
     return (
-        <div className='container'>
+        <div className='container simple-steps'>
             <div className='steps-section'>
                 <h2 className='steps-title'>Wystarczą 4 proste kroki</h2>
                 <div className='image-steps-decoration'> </div>

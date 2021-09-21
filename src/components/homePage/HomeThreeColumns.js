@@ -1,7 +1,7 @@
 
 export default function HomeThreeColumns() {
     return (
-        <div className='container'>
+        <div className='container three-columns-section'>
             <div className='three-columns row'>
                 <div className='column col-md-4 col-sm-12'>
                     <p className='column-number'>10</p>

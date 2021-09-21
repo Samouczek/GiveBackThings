@@ -1,0 +1,46 @@
+
+.about-us-section{
+  background-color: $color-almost-white;
+
+  .about-us-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 9.5rem;
+    padding-right: 9.5rem;
+
+    .about-us-title{
+      text-align: center;
+      font-size: 2.375rem;
+      line-height: 3.4375rem;
+      letter-spacing: -0.76px;
+    }
+    .about-us-image-decoration{
+      align-self: center;
+      height: 2.0625rem;
+      width: 15.8125rem;
+      background: transparent url('../../assets/Decoration.svg') no-repeat padding-box;
+      padding-top: 1.625rem;
+      padding-bottom: 3.4375rem;
+    }
+    .about-us-text{
+      text-align: center;
+      font-size: 1.875rem;
+      line-height: 3.375rem;
+      letter-spacing: -0.6px;
+      padding-bottom: 2.5rem
+    }
+    .about-us-signature{
+      align-self: flex-end;
+      width: 13.0625rem;
+      height: 9.25rem;
+      background: transparent url('../../assets/Signature.svg') 0 0 no-repeat padding-box;
+    }
+  }
+  .about-us-image{
+    min-height: 50rem;
+    background: transparent url('../../assets/People.jpg') no-repeat padding-box;
+    margin-top: 0;
+  }
+}

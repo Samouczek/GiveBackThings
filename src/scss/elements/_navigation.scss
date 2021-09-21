@@ -17,6 +17,7 @@ nav{
   opacity: 1;
   &:hover, &:active{
     border: 0.75px solid $color-yellow;
+    cursor: pointer;
   }
 }
 
@@ -36,6 +37,7 @@ nav{
     opacity: 1;
     &:hover, &:active{
       border: 0.75px solid $color-dark-gray;
+      cursor: pointer;
     }
   }
 }

@@ -13,9 +13,20 @@ export default function Navigation() {
                 <li className='topMenu-item'><Link to={REGISTRATION} >Załóż konto</Link></li>
             </ul>
             <ul className='bottomMenu'>
-                <li className='bottomMenu-item'><LinkScroll >Start</LinkScroll></li>
-                <li className='bottomMenu-item'><LinkScroll >O co chodzi?</LinkScroll></li>
-                <li className='bottomMenu-item'><LinkScroll >O nas</LinkScroll></li>
+                <li className='bottomMenu-item'>
+                    <LinkScroll activeClass="active" to="headerElement" spy={true} smooth={true}>
+                        Start
+                    </LinkScroll>
+                </li>
+                <li className='bottomMenu-item'>
+                    <LinkScroll activeClass="active" to="simpleStepsElement" spy={true} smooth={true}>
+                        O co chodzi?
+                    </LinkScroll>
+                </li>
+                <li className='bottomMenu-item'>
+                    <LinkScroll activeClass="active" to="aboutUsElement" spy={true} smooth={true}>
+                        O nas
+                    </LinkScroll></li>
                 <li className='bottomMenu-item'><LinkScroll >Fundacja i organizacje</LinkScroll></li>
                 <li className='bottomMenu-item'><LinkScroll >Kontakt</LinkScroll></li>
             </ul>

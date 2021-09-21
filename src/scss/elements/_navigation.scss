@@ -10,11 +10,14 @@ nav{
 .topMenu-item{
   padding: 0.5rem;
   font-size: 0.875rem;
-  line-height: 5.3125rem;
+  line-height: 1.5rem;
   text-align: right;
   letter-spacing: 0;
   color: $color-gray;
   opacity: 1;
+  &:hover, &:active{
+    border: 0.75px solid $color-yellow;
+  }
 }
 
 
@@ -31,6 +34,9 @@ nav{
     line-height: 1.5rem;
     letter-spacing: 0px;
     opacity: 1;
+    &:hover, &:active{
+      border: 0.75px solid $color-dark-gray;
+    }
   }
 }
 

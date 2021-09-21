@@ -3,7 +3,7 @@ export default function HomeAboutUs() {
     return (
         <div className='container about-us-section'>
             <div className='row'>
-                <div className='about-us-content col-md-6 col-sm-12'>
+                <div className='about-us-content col-lg-6 col-sm-12'>
                     <h2 className='about-us-title'>O nas</h2>
                     <div className='about-us-image-decoration'> </div>
                     <p className='about-us-text'>
@@ -12,7 +12,7 @@ export default function HomeAboutUs() {
                     </p>
                     <div className='about-us-signature'> </div>
                 </div>
-                <div  className='about-us-image col-md-6 col-sm-12'> </div>
+                <div  className='about-us-image col-lg-6 col-sm-12'> </div>
             </div>
         </div>
     )

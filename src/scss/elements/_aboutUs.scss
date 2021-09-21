@@ -7,8 +7,8 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    padding-left: 9.5rem;
-    padding-right: 9.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 
     .about-us-title{
       text-align: center;
@@ -36,11 +36,46 @@
       width: 13.0625rem;
       height: 9.25rem;
       background: transparent url('../../assets/Signature.svg') 0 0 no-repeat padding-box;
+      margin-bottom: 2rem;
     }
   }
   .about-us-image{
-    min-height: 50rem;
+    min-height: 30rem;
     background: transparent url('../../assets/People.jpg') no-repeat padding-box;
     margin-top: 0;
+    background-position: center;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .about-us-section {
+    .about-us-content {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .about-us-section {
+    .about-us-image {
+      min-height: 30rem;
+    }
+    .about-us-content {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .about-us-section {
+    .about-us-image {
+     height: 58.4375rem;
+    }
+    .about-us-content {
+      padding-left: 9.5rem;
+      padding-right: 9.5rem;
+    }
   }
 }

@@ -7,9 +7,9 @@ export default function HomeHeader() {
     return (
         <div className='container header'>
             <div className='row'>
-                <div className='col-md-6 image-header'>
+                <div className='col-lg-6 image-header'>
                 </div>
-                <div className='col-md-6 col-sm-12 right-header'>
+                <div className='col-lg-6 col-sm-12 right-header'>
                     <Navigation />
                     <h1>
                         Zacznij pomagać! <br />

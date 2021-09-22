@@ -16,13 +16,8 @@
       line-height: 3.4375rem;
       letter-spacing: -0.76px;
     }
-    .about-us-image-decoration{
+    .decoration--about-us{
       align-self: center;
-      height: 2.0625rem;
-      width: 15.8125rem;
-      background: transparent url('../../assets/Decoration.svg') no-repeat padding-box;
-      padding-top: 1.625rem;
-      padding-bottom: 2rem;
     }
     .about-us-text{
       text-align: center;
@@ -54,7 +49,7 @@
       .about-us-title{
         font-size: 2.375rem;
       }
-      .about-us-image-decoration{
+      .decoration--about-us{
         padding-bottom: 3.4375rem;
       }
       .about-us-text {

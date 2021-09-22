@@ -18,7 +18,7 @@ export default function HomeHeader() {
                             Zacznij pomagać! <br />
                             Oddaj niechciane rzeczy w zaufane ręce
                         </h1>
-                        <div className='image-decoration'>
+                        <div className='decoration decoration--header'>
                         </div>
                         <div className='btns-header'>
                             <button className='btn-home btn-home_header'>

@@ -8,7 +8,7 @@ export default function HomeAboutUs() {
                 <div className='row'>
                     <div className='about-us-content col-lg-6 col-sm-12'>
                         <h2 className='about-us-title'>O nas</h2>
-                        <div className='about-us-image-decoration'> </div>
+                        <div className='decoration decoration--about-us'> </div>
                         <p className='about-us-text'>
                             Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts
                             black-eyed pea prairie turnip leek lentil turnip greens parsnip.

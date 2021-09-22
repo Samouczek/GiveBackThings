@@ -9,7 +9,7 @@ export default function HomeContactUs() {
                     <div  className='contact-us-image col-lg-7 col-md-6 col-sm-12'> </div>
                     <div className='contact-us-content col-lg-5 col-md-6 col-sm-12'>
                         <h2 className='contact-us-title'>Skontaktuj się z nami</h2>
-                        <div className='contact-us-image-decoration'> </div>
+                        <div className='decoration decoration--contact-us'> </div>
                         <form className='contact-us-form'>
                             <div className="form__field">
                                 <label className="form__label" >

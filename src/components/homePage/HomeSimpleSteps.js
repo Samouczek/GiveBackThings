@@ -9,7 +9,7 @@ export default function HomeSimpleSteps() {
             <div className='container simple-steps'>
                 <div className='steps-section'>
                     <h2 className='steps-title'>Wystarczą 4 proste kroki</h2>
-                    <div className='image-steps-decoration'> </div>
+                    <div className='decoration decoration--simple-steps'> </div>
                     <div className='row steps'>
                         <div className='step step--first col-lg-3 col-md-6 col-sm-12'>
                             <p className='step-title'>Wybierz rzeczy</p>

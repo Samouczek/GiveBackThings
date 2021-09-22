@@ -1,0 +1,35 @@
+
+.contact-us-section{
+  position: relative;
+  height: 64.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:before{
+    content: "";
+    background-image: url("../../assets/Background-Contact-Form.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.4;
+  }
+  .contact-us-title{
+    position: relative;
+    text-align: center;
+    letter-spacing: -0.76px;
+    font-size: 2.375rem;
+    line-height: 3.4375rem;
+  }
+  .decoration--contact-us{
+    position: relative;
+  }
+  .contact-us-form{
+    position: relative;
+    .form__label{
+
+    }
+  }
+}

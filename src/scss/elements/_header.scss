@@ -22,11 +22,8 @@ h1{
   padding-bottom: 1.5625rem;
 }
 
-.image-decoration{
-  height: 2.0625rem;
-  background: transparent url('../../assets/Decoration.svg') 0 0 no-repeat padding-box;
-  opacity: 1;
-  background-position-x: center;
+.decoration--header{
+  align-self: center;
 }
 
 .btns-header{

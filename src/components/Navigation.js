@@ -26,9 +26,18 @@ export default function Navigation() {
                 <li className='bottomMenu-item'>
                     <LinkScroll activeClass="active" to="aboutUsElement" spy={true} smooth={true}>
                         O nas
-                    </LinkScroll></li>
-                <li className='bottomMenu-item'><LinkScroll >Fundacja i organizacje</LinkScroll></li>
-                <li className='bottomMenu-item'><LinkScroll >Kontakt</LinkScroll></li>
+                    </LinkScroll>
+                </li>
+                <li className='bottomMenu-item'>
+                    <LinkScroll activeClass="active" to='whoWeHelpElement' spy={true} smooth={true}>
+                        Fundacja i organizacje
+                    </LinkScroll>
+                </li>
+                <li className='bottomMenu-item'>
+                    <LinkScroll activeClass="active" to='contactUsElement' spy={true} smooth={true}>
+                        Kontakt
+                    </LinkScroll>
+                </li>
             </ul>
         </nav>
     )

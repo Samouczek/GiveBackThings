@@ -6,8 +6,8 @@ export default function HomeContactUs() {
         <Element name="contactUsElement">
             <div className='container contact-us-section'>
                 <div className='row'>
-                    <div  className='contact-us-image col-lg-7 col-md-6 col-sm-12'> </div>
-                    <div className='contact-us-content col-lg-5 col-md-6 col-sm-12'>
+                    <div  className='contact-us-image col-md-6 col-sm-12'> </div>
+                    <div className='contact-us-content col-md-6 col-sm-12'>
                         <h2 className='contact-us-title'>Skontaktuj się z nami</h2>
                         <div className='decoration decoration--contact-us'> </div>
                         <form className='contact-us-form'>
@@ -35,7 +35,7 @@ export default function HomeContactUs() {
                                     />
                                 </label>
                             </div>
-                            <input type="submit" value='Wyślij' className="btn btn--primary"/>
+                            <input type="submit" value='Wyślij' className="btn btn--submit"/>
                         </form>
                         <div className='about-us-signature'> </div>
                     </div>

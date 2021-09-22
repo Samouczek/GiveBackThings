@@ -2,9 +2,7 @@
 .contact-us-section{
   position: relative;
   height: 64.125rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   &:before{
     content: "";
     background-image: url("../../assets/Background-Contact-Form.jpg");
@@ -12,24 +10,126 @@
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
+    left: -300%;
     bottom: 0;
     opacity: 0.4;
   }
-  .contact-us-title{
-    position: relative;
-    text-align: center;
-    letter-spacing: -0.76px;
-    font-size: 2.375rem;
-    line-height: 3.4375rem;
-  }
-  .decoration--contact-us{
-    position: relative;
-  }
-  .contact-us-form{
-    position: relative;
-    .form__label{
+  .contact-us-content{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
 
+    .contact-us-title{
+      padding-top: 4rem;
+      position: relative;
+      text-align: center;
+      letter-spacing: -0.76px;
+      font-size: 2.375rem;
+      line-height: 3.4375rem;
+    }
+    .decoration--contact-us{
+      align-self: center;
+      position: relative;
+    }
+    .contact-us-form{
+        align-self: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+
+        .form__field{
+          flex-grow: 1;
+          padding-bottom: 2.5rem;
+          .form__label{
+            font-size: 1rem;
+            line-height: 3.8125rem;
+            .form__input{
+              width: 100%;
+              border-top: none;
+              border-left: none;
+              border-right: none;
+              background-color: transparent;
+              border-bottom: 0.75px solid $color-dark-gray;
+              font-size: 1.125rem;
+              line-height: 1.5rem;
+              &::placeholder{
+                color: $color-light-gray;
+              }
+            }
+            .message{
+              height: 6rem;
+              line-height: 1.5rem;
+            }
+          }
+        }
+
+
+      .btn--submit{
+        width: 9.375rem;
+        height: 3.125rem;
+        font-size: 1.125rem;
+        text-align: center;
+        align-self: flex-end;
+        background-color: transparent;
+        border: 0.75px solid $color-dark-gray;
+        margin-top: 2.75rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .contact-us-section {
+    &:before {
+      left: -40%;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .contact-us-section {
+    .contact-us-content {
+      .contact-us-title {
+        padding-top: 12.5rem;
+      }
+      .contact-us-form{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        .form__field:first-child{
+          padding-right: 1rem;
+          width: 45%;
+        }
+        .form__field:nth-child(2){
+          padding-left: 1rem;
+          width: 45%;
+        }
+        .form__field:nth-child(3){
+          width: 100%;
+        }
+      }
+    }
+    &:before {
+      left: -25%;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-xl) {
+  .contact-us-section {
+    .contact-us-content {
+      .contact-us-form{
+        padding-left: 9rem;
+        padding-right: 9rem;
+      }
+    }
+    &:before {
+      left: 0;
     }
   }
 }

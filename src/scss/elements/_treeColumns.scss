@@ -1,48 +1,53 @@
 
-.three-columns {
-  padding-top: 2.875rem;
-  padding-bottom: 5.375rem;
+
+.three-columns-section{
   background-color: $color-yellow;
 
-  .column{
-    flex-grow: 1;
-
-    .column-number {
-      font-size: 5.625rem;
-      line-height: 7.625rem;
-      letter-spacing: 0px;
-      color: $color-brown;
-      text-align: center;
-    }
-
-    .column-title {
-      font-size: 1.125rem;
-      text-transform: uppercase;
-      line-height: 1.875rem;
-      letter-spacing: -0.36px;
-      text-align: center;
-      padding-top: 0.625rem;
-      padding-bottom: 1.75rem;
-    }
-
-    .column-text {
-      font-size: 1rem;
-      letter-spacing: -0.32px;
-      line-height: 1.125rem;
-      font-family: $font-alt;
-      text-align: center;
-      font-weight: 300;
-    }
-  }
-}
-
-@media (min-width: $breakpoint-sm) {
   .three-columns {
-    .column {
-      padding-left: 6rem;
-      padding-right: 6rem;
+    padding-top: 2.875rem;
+    padding-bottom: 5.375rem;
+
+
+    .column{
+      flex-grow: 1;
+
+      .column-number {
+        font-size: 5.625rem;
+        line-height: 7.625rem;
+        letter-spacing: 0px;
+        color: $color-brown;
+        text-align: center;
+      }
+
+      .column-title {
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        line-height: 1.875rem;
+        letter-spacing: -0.36px;
+        text-align: center;
+        padding-top: 0.625rem;
+        padding-bottom: 1.75rem;
+      }
+
+      .column-text {
+        font-size: 1rem;
+        letter-spacing: -0.32px;
+        line-height: 1.125rem;
+        font-family: $font-alt;
+        text-align: center;
+        font-weight: 300;
+      }
     }
   }
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    .three-columns {
+      .column {
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
+    }
 }
 
 @media (min-width: $breakpoint-md) {

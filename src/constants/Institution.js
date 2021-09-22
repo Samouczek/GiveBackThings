@@ -1,5 +1,5 @@
 
-const foundations = [
+export const foundations = [
       ["Fundacja “Dbam o Zdrowie”", "Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.",
           "ubrania, jedzenie, sprzęt AGD, meble, zabawki"],
       ["Fundacja “Dla dzieci”","Cel i misja: Pomoc dzieciom z ubogich rodzin.",
@@ -20,7 +20,7 @@ const foundations = [
             "zainteresowanie ludzi"]
 ];
 
-const nonGovernmentalOrganizations = [
+export const nonGovernmentalOrganizations = [
     ["Organizacja “Lorem Ipsum 1”", "Quis varius quam quisque id diam vel elementum pulvinar.","Egestas, sed, tempus"],
     ["Organizacja  “Lorem Ipsum 2”", "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.","Ut, aliquam, purus, sit, amet"],
     ["Organizacja  “Lorem Ipsum 3”", "Scelerisque in dictum non consectetur a erat nam.","Mi, quis, hendrerit, dolor"],
@@ -29,10 +29,8 @@ const nonGovernmentalOrganizations = [
     ["Organizacja  “Lorem Ipsum 6”", "Scelerisque in dictum non consectetur a erat nam.","Mi, quis, hendrerit, dolor"]
 ];
 
-const localCollection = [
+export const localCollection = [
     ["Zbiórka “Lorem Ipsum 1”", "Quis varius quam quisque id diam vel elementum pulvinar.","Egestas, sed, tempus"],
     ["Zbiórka “Lorem Ipsum 2”", "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.","Ut, aliquam, purus, sit, amet"],
     ["Zbiórka “Lorem Ipsum 3”", "Scelerisque in dictum non consectetur a erat nam.","Mi, quis, hendrerit, dolor"]
 ];
-
-export default {foundations, nonGovernmentalOrganizations, localCollection};

@@ -3,9 +3,11 @@ import {foundations, nonGovernmentalOrganizations,localCollection} from "../../c
 import {useState} from "react";
 import InstitutionsDisplay from "../atoms/InstitutionsDisplay";
 import SetArrayPages from "../../logic/SetArrayPages";
+import SetThreeDataDisplay from "../../logic/SetThreeDataDisplay";
 
 export default function HomeWhoWeHelp() {
     const [data, setData] = useState(foundations);
+    const [dataDisplay, setDataDisplay] = useState([]);
     const [pages, setPages] = useState([1]);
 
     let Element = Scroll.Element;
@@ -27,7 +29,12 @@ export default function HomeWhoWeHelp() {
         setData(localCollection);
         setPages(SetArrayPages(Math.floor(localCollection.length/3)));
     }
-    console.log(pages.length);
+
+    const handleOnClickPage = (event, page) => {
+        event.preventDefault();
+        setDataDisplay(SetThreeDataDisplay(data,page));
+    }
+
     return (
         <Element name="whoWeHelpElement">
             <div className='container who-we-help'>
@@ -51,7 +58,13 @@ export default function HomeWhoWeHelp() {
                     <div className='help__pagination'>
                         { pages.length > 1 &&
                             pages.map((page,index) =>
-                                <button className='btn btn-pagination' key={index}>{page}</button>)
+                                <button
+                                    className='btn btn-pagination'
+                                    key={index}
+                                    onClick={(e) => handleOnClickPage(e,page)}
+                                >
+                                    {page}
+                                </button>)
                         }
                     </div>
 

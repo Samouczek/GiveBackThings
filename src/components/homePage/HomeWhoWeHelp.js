@@ -27,7 +27,7 @@ export default function HomeWhoWeHelp() {
         setData(localCollection);
         setPages(SetArrayPages(Math.floor(localCollection.length/3)));
     }
-    console.log(pages)
+    console.log(pages.length);
     return (
         <Element name="whoWeHelpElement">
             <div className='container who-we-help'>
@@ -49,7 +49,7 @@ export default function HomeWhoWeHelp() {
                     </p>
                     <InstitutionsDisplay data={localCollection}/>
                     <div className='help__pagination'>
-                        {
+                        { pages.length > 1 &&
                             pages.map((page,index) =>
                                 <button className='btn btn-pagination' key={index}>{page}</button>)
                         }

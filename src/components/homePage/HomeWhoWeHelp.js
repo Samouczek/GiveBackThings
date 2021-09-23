@@ -2,42 +2,32 @@ import * as Scroll from "react-scroll";
 import {foundations, nonGovernmentalOrganizations,localCollection} from "../../constants/Institution";
 import {useState} from "react";
 import InstitutionsDisplay from "../atoms/InstitutionsDisplay";
+import SetArrayPages from "../../logic/SetArrayPages";
 
 export default function HomeWhoWeHelp() {
     const [data, setData] = useState(foundations);
-    const [pages, setPages] = useState([1,2]);
+    const [pages, setPages] = useState([1]);
 
     let Element = Scroll.Element;
 
     const handleOnClickFoundations = (event) => {
         event.preventDefault();
         setData(foundations);
-        setPages([]);
-        for (let i = 1; i <= Math.floor(foundations.length/3); i++) {
-            setPages(prev => {
-                console.log("prev: ",prev);
-                prev.push(i)});
-        };
+        setPages(SetArrayPages(Math.floor(foundations.length/3)));
     }
 
     const handleOnClickNonGovernmentalOrganizations = (event) => {
         event.preventDefault();
         setData(nonGovernmentalOrganizations);
-        setPages([]);
-        for (let i = 1; i <= Math.floor(nonGovernmentalOrganizations.length/3); i++) {
-            setPages(prev => prev.push(i));
-        };
+        setPages(SetArrayPages(Math.floor(nonGovernmentalOrganizations.length/3)));
     }
 
     const handleOnClickLocalCollection= (event) => {
         event.preventDefault();
         setData(localCollection);
-        setPages([]);
-        for (let i = 1; i <= Math.floor(localCollection.length/3); i++) {
-                setPages(prev => prev.push(i));
-        };
+        setPages(SetArrayPages(Math.floor(localCollection.length/3)));
     }
-
+    console.log(pages)
     return (
         <Element name="whoWeHelpElement">
             <div className='container who-we-help'>
@@ -59,8 +49,10 @@ export default function HomeWhoWeHelp() {
                     </p>
                     <InstitutionsDisplay data={localCollection}/>
                     <div className='help__pagination'>
-                        { (pages.length > 1) &&
-                            pages.forEach((page) => <button className='btn btn-pagination'>page</button>) }
+                        {
+                            pages.map((page,index) =>
+                                <button className='btn btn-pagination' key={index}>{page}</button>)
+                        }
                     </div>
 
                 </div>

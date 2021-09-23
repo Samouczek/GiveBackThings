@@ -55,8 +55,10 @@
     .institution{
       display: flex;
       flex-direction: column;
-      border-bottom: 0.75px solid $color-dark-gray;
-
+      border-bottom: 0.75px solid $color-border;
+      &:nth-child(3){
+        border-bottom: none;
+      }
       .institution-data{
         flex-grow: 1;
         padding-top: 2rem;
@@ -93,13 +95,18 @@
     }
   }
   .help__pagination{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
     .btn-pagination{
       width: 2.5rem;
       height: 3.125rem;
       font-size: 1.125rem;
       line-height: 1.5rem;
+      background-color: transparent;
+      border: none;
       &:hover, &:active, &:focus {
-        border: 0.75px solid $color-dark-gray;
+        border: 0.75px solid $color-border;
       }
     }
   }

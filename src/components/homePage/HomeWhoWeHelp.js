@@ -60,7 +60,7 @@ export default function HomeWhoWeHelp() {
                     <InstitutionsDisplay data={localCollection}/>
                     <div className='help__pagination'>
                         { (pages.length > 1) &&
-                            pages.forEach((page) => <button className='btn -btn-pagination'>page</button>) }
+                            pages.forEach((page) => <button className='btn btn-pagination'>page</button>) }
                     </div>
 
                 </div>

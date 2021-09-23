@@ -33,7 +33,7 @@
       border: none;
       background-color: transparent;
       margin: 0.5rem;
-      &:hover, &:active{
+      &:hover, &:active, &:focus{
         border: 0.75px solid $color-dark-gray;
         cursor: pointer;
       }
@@ -89,6 +89,17 @@
           display: table-cell;
           vertical-align: middle;
         }
+      }
+    }
+  }
+  .help__pagination{
+    .btn-pagination{
+      width: 2.5rem;
+      height: 3.125rem;
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+      &:hover, &:active, &:focus {
+        border: 0.75px solid $color-dark-gray;
       }
     }
   }

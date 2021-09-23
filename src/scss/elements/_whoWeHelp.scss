@@ -105,6 +105,8 @@
       line-height: 1.5rem;
       background-color: transparent;
       border: none;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
       &:hover, &:active, &:focus {
         border: 0.75px solid $color-border;
       }

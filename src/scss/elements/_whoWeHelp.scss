@@ -98,6 +98,9 @@
     display: flex;
     justify-content: center;
     padding-top: 2rem;
+    &:first-child{
+      checked: true;
+    }
     .btn-pagination{
       width: 2.5rem;
       height: 3.125rem;

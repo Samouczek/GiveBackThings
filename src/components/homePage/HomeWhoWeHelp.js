@@ -7,8 +7,8 @@ import SetThreeDataDisplay from "../../logic/SetThreeDataDisplay";
 
 export default function HomeWhoWeHelp() {
     const [data, setData] = useState(foundations);
-    const [dataDisplay, setDataDisplay] = useState([]);
-    const [pages, setPages] = useState([1]);
+    const [dataDisplay, setDataDisplay] = useState([foundations[0],foundations[1],foundations[2]]);
+    const [pages, setPages] = useState([1,2,3]);
 
     let Element = Scroll.Element;
 
@@ -16,18 +16,24 @@ export default function HomeWhoWeHelp() {
         event.preventDefault();
         setData(foundations);
         setPages(SetArrayPages(Math.floor(foundations.length/3)));
+        setDataDisplay([foundations[0],foundations[1],foundations[2]]);
     }
 
     const handleOnClickNonGovernmentalOrganizations = (event) => {
         event.preventDefault();
         setData(nonGovernmentalOrganizations);
         setPages(SetArrayPages(Math.floor(nonGovernmentalOrganizations.length/3)));
+        setDataDisplay([
+            nonGovernmentalOrganizations[0],
+            nonGovernmentalOrganizations[1],
+            nonGovernmentalOrganizations[2]]);
     }
 
     const handleOnClickLocalCollection= (event) => {
         event.preventDefault();
         setData(localCollection);
         setPages(SetArrayPages(Math.floor(localCollection.length/3)));
+        setDataDisplay([localCollection[0],localCollection[1],localCollection[2]]);
     }
 
     const handleOnClickPage = (event, page) => {
@@ -54,7 +60,7 @@ export default function HomeWhoWeHelp() {
                         W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
                         Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
                     </p>
-                    <InstitutionsDisplay data={localCollection}/>
+                    <InstitutionsDisplay data={dataDisplay}/>
                     <div className='help__pagination'>
                         { pages.length > 1 &&
                             pages.map((page,index) =>

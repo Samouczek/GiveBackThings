@@ -7,17 +7,25 @@ export default function HomeContactUs() {
     const [name, setName] = useState(false);
     const [email, setEmail] = useState(false);
     const [message, setMessage] = useState(false);
+    const [nameValidation, setNameValidation] = useState(false);
+    const [emailValidation, setEmailValidation] = useState(false);
+    const [messageValidation, setMessageValidation] = useState(false);
+    const [success, setSuccess] = useState(false);
     let Element = Scroll.Element;
 
     const handleOnClick = (event) => {
         event.preventDefault();
-        if (nameValidation(name) === 0 && emailValidation(email) === 0 && messageValidation(message) === 0){
+        setNameValidation(nameValidation(name));
+        setEmailValidation(emailValidation(email));
+        setMessageValidation(messageValidation(message));
+        if (!nameValidation(name) && !emailValidation(email) && !messageValidation(message)){
             const data = {
                 name: name,
                 email: email,
                 message: message
             };
             postForm(data);
+            setSuccess(true);
         }
     }
     return (
@@ -28,6 +36,14 @@ export default function HomeContactUs() {
                     <div className='contact-us-content col-md-6 col-sm-12'>
                         <h2 className='contact-us-title'>Skontaktuj się z nami</h2>
                         <div className='decoration decoration--contact-us'> </div>
+                        { success &&
+                            <div className='contact-us-success'>
+                                <p>
+                                    Wiadomość została wysłana! <br />
+                                    Wkrótce się skontaktujemy.
+                                </p>
+                            </div>
+                        }
                         <form className='contact-us-form'>
                             <div className="form__field">
                                 <label className="form__label" >
@@ -39,6 +55,9 @@ export default function HomeContactUs() {
                                         onChange={event => setName(event.target.value)}
                                     />
                                 </label>
+                                {nameValidation &&
+                                    <p className='form-error'>Podane imię jest nieprawidłowe!</p>
+                                }
                             </div>
                             <div className="form__field">
                                 <label className="form__label">
@@ -50,6 +69,9 @@ export default function HomeContactUs() {
                                         onChange={event => setEmail(event.target.value)}
                                     />
                                 </label>
+                                {emailValidation &&
+                                    <p className='form-error'>Podany email jest nieprawidłowy!</p>
+                                }
                             </div>
                             <div className="form__field">
                                 <label className="form__label">
@@ -63,6 +85,9 @@ export default function HomeContactUs() {
                                         onChange={event => setMessage(event.target.value)}
                                     />
                                 </label>
+                                {messageValidation &&
+                                    <p className='form-error'>Wiadomość musi mieć conajmniej 120 znaków!</p>
+                                }
                             </div>
                             <input type="submit" value='Wyślij' className="btn btn--submit" onClick={handleOnClick}/>
                         </form>

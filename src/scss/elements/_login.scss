@@ -1,0 +1,82 @@
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-top: 7.6875rem;
+  padding-bottom: 12.625rem;
+
+  .login__header{
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 3.4375rem;
+    letter-spacing: -0.8px;
+    padding-bottom: 3rem;
+  }
+
+  .login__decoration{
+    align-self: center;
+    padding-bottom: 3.75rem;
+  }
+
+  .login__form{
+    align-self: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    .login__form-fields{
+      background-color: $color-almost-white;
+      padding: 2.5rem 4rem 2rem;
+      .login__form-field{
+        flex-grow: 1;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        .login__form-label{
+          font-size: 1rem;
+          line-height: 2.5rem;
+          border-bottom: 0.75px solid $color-dark-gray;
+          .login__form-input{
+            width: 100%;
+            border: none;
+            background-color: transparent;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+    .login__btn{
+        font-weight: 300;
+      font-size: 1.125rem;
+      color: $color-black;
+      padding-top: 2.5rem;
+      position: relative;
+      .left-btn, .right-btn {
+        border: none;
+        background-color: transparent;
+        padding: 0.8125rem 0.9375rem;
+        &:hover, &:active, &:focus{
+          border: 0.75px solid $color-dark-gray;
+          cursor: pointer;
+        }
+      }
+      .left-btn{
+        position: absolute;
+        left: -4rem;
+
+      }
+      .right-btn{
+        position: absolute;
+        right: -4rem;
+
+      }
+    }
+  }
+
+}

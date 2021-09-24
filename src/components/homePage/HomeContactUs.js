@@ -1,23 +1,23 @@
 import * as Scroll from "react-scroll";
 import {useState} from "react";
-import {emailValidation, messageValidation, nameValidation} from "../../logic/FormValidation";
 import {postForm} from "../../api/postForm";
+import {emailValidation, messageValidation, nameValidation} from "../../logic/FormValidation";
 
 export default function HomeContactUs() {
     const [name, setName] = useState(false);
     const [email, setEmail] = useState(false);
     const [message, setMessage] = useState(false);
-    const [nameValidation, setNameValidation] = useState(false);
-    const [emailValidation, setEmailValidation] = useState(false);
-    const [messageValidation, setMessageValidation] = useState(false);
+    const [nameIncorrect, setNameIncorrect] = useState(false);
+    const [emailIncorrect, setEmailIncorrect] = useState(false);
+    const [messageIncorrect, setMessageIncorrect] = useState(false);
     const [success, setSuccess] = useState(false);
     let Element = Scroll.Element;
 
     const handleOnClick = (event) => {
         event.preventDefault();
-        setNameValidation(nameValidation(name));
-        setEmailValidation(emailValidation(email));
-        setMessageValidation(messageValidation(message));
+        setNameIncorrect(nameValidation(name));
+        setEmailIncorrect(emailValidation(email));
+        setMessageIncorrect(messageValidation(message));
         if (!nameValidation(name) && !emailValidation(email) && !messageValidation(message)){
             const data = {
                 name: name,
@@ -55,8 +55,10 @@ export default function HomeContactUs() {
                                         onChange={event => setName(event.target.value)}
                                     />
                                 </label>
-                                {nameValidation &&
-                                    <p className='form-error'>Podane imię jest nieprawidłowe!</p>
+                                {nameIncorrect &&
+                                    <div className='form-failure'>
+                                        <p>Podane imię jest nieprawidłowe!</p>
+                                    </div>
                                 }
                             </div>
                             <div className="form__field">
@@ -69,8 +71,10 @@ export default function HomeContactUs() {
                                         onChange={event => setEmail(event.target.value)}
                                     />
                                 </label>
-                                {emailValidation &&
-                                    <p className='form-error'>Podany email jest nieprawidłowy!</p>
+                                {emailIncorrect &&
+                                    <div className='form-failure'>
+                                        <p className='form-error'>Podany email jest nieprawidłowy!</p>
+                                    </div>
                                 }
                             </div>
                             <div className="form__field">
@@ -85,8 +89,10 @@ export default function HomeContactUs() {
                                         onChange={event => setMessage(event.target.value)}
                                     />
                                 </label>
-                                {messageValidation &&
-                                    <p className='form-error'>Wiadomość musi mieć conajmniej 120 znaków!</p>
+                                {messageIncorrect &&
+                                    <div className='form-failure'>
+                                        <p className='form-error'>Wiadomość musi mieć conajmniej 120 znaków!</p>
+                                    </div>
                                 }
                             </div>
                             <input type="submit" value='Wyślij' className="btn btn--submit" onClick={handleOnClick}/>

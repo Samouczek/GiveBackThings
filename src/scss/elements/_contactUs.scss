@@ -50,18 +50,21 @@
         .form__field{
           flex-grow: 1;
           padding-bottom: 2.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
           .form__label{
             font-size: 1rem;
             line-height: 3.8125rem;
+            border-bottom: 0.75px solid $color-dark-gray;
             .form__input{
               width: 100%;
-              border-top: none;
-              border-left: none;
-              border-right: none;
+              border: none;
               background-color: transparent;
-              border-bottom: 0.75px solid $color-dark-gray;
+
               font-size: 1.125rem;
               line-height: 1.5rem;
+              padding-bottom: 0;
               &::placeholder{
                 color: $color-light-gray;
               }
@@ -70,6 +73,12 @@
               height: 6rem;
               line-height: 1.5rem;
             }
+          }
+          .form-failure {
+            padding-top: 0.5rem;
+            color: $color-failure;
+            font-size: 0.75rem;
+            border-top: 1px solid $color-failure;
           }
         }
 

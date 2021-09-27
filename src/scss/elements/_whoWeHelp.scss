@@ -33,13 +33,11 @@
       background-color: transparent;
       margin: 0.5rem;
       &:hover, &:active, &:focus{
-        border: 0.75px solid $color-dark-gray;
         cursor: pointer;
       }
     }
     .active{
       border: 0.75px solid $color-dark-gray;
-      cursor: pointer;
     }
   }
   .help__institutions-info{
@@ -113,8 +111,11 @@
       margin-right: 0.5rem;
       margin-left: 0.5rem;
       &:hover, &:active, &:focus {
-        border: 0.75px solid $color-border;
+        cursor: pointer;
       }
+    }
+    .active{
+      border: 0.75px solid $color-border;
     }
   }
 }

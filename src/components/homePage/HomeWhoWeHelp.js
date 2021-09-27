@@ -9,7 +9,7 @@ export default function HomeWhoWeHelp() {
     const [data, setData] = useState(foundations);
     const [dataDisplay, setDataDisplay] = useState([foundations[0],foundations[1],foundations[2]]);
     const [pages, setPages] = useState([1,2,3]);
-    const [activePage, setActivePage] = useState(false);
+    const [activePage, setActivePage] = useState(1);
     const [activeFoundations, setActiveFoundations] = useState(true);
     const [activeOrganizations, setActiveOrganizations] = useState(false);
     const [activeCollections, setActiveCollections] = useState(false);
@@ -52,7 +52,7 @@ export default function HomeWhoWeHelp() {
     const handleOnClickPage = (event, page) => {
         event.preventDefault();
         setDataDisplay(SetThreeDataDisplay(data,page));
-        setActivePage(true);
+        setActivePage(page);
     }
 
     return (
@@ -89,7 +89,7 @@ export default function HomeWhoWeHelp() {
                         { pages.length > 1 &&
                             pages.map((page,index) =>
                                 <button
-                                    className = {`btn btn-pagination ${activePage ? 'active' : ''}`}
+                                    className = {`btn btn-pagination ${(activePage === page) ? 'active' : ''}`}
                                     key={index}
                                     onClick={(e) => handleOnClickPage(e,page)}
                                 >

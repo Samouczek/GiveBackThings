@@ -1,6 +1,6 @@
 
 export const nameValidation = (name) => {
-    return (name.includes(" ") || name.length === 0);
+    return ((typeof name == "string" && name.indexOf(' ') > -1)|| name.length === 0 || name === false);
 }
 
 export const emailValidation = (email) => {
@@ -9,5 +9,5 @@ export const emailValidation = (email) => {
 }
 
 export const messageValidation = (message) => {
-    return (message.length < 120);
+    return (message.length < 120 || message === false);
 }

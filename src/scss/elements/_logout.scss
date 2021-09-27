@@ -26,10 +26,13 @@
     line-height: 2rem;
     color: $color-black;
     background-color: transparent;
-    border: 0.75px solid $color-dark-gray;
-    cursor: pointer;
     width: 9.375rem;
     height: 3.125rem;
+    border: none;
+    &:hover, &:active{
+      border: 0.75px solid $color-dark-gray;
+      cursor: pointer;
+    }
     }
 }
 

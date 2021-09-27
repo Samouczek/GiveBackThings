@@ -1,0 +1,35 @@
+
+.logout {
+  display: flex;
+  flex-direction: column;
+  padding-top: 7.6875rem;
+  padding-bottom: 12.625rem;
+
+  .logout__header {
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 3.4375rem;
+    letter-spacing: -0.8px;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .logout__decoration {
+    align-self: center;
+    padding-bottom: 3.75rem;
+  }
+  .main-page-btn{
+    align-self: center;
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 2rem;
+    color: $color-black;
+    background-color: transparent;
+    border: 0.75px solid $color-dark-gray;
+    cursor: pointer;
+    width: 9.375rem;
+    height: 3.125rem;
+    }
+}
+

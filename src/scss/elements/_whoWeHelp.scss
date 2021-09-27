@@ -1,5 +1,4 @@
 
-
 .help-section{
   display: flex;
   flex-direction: column;
@@ -37,7 +36,10 @@
         border: 0.75px solid $color-dark-gray;
         cursor: pointer;
       }
-
+    }
+    .active{
+      border: 0.75px solid $color-dark-gray;
+      cursor: pointer;
     }
   }
   .help__institutions-info{
@@ -116,6 +118,8 @@
     }
   }
 }
+
+
 
 @media (min-width: $breakpoint-sm) {
   .help-section{

@@ -49,6 +49,12 @@
             padding-bottom: 0;
           }
         }
+        .login-form-failure {
+          padding-top: 0.5rem;
+          color: $color-failure;
+          font-size: 0.75rem;
+          border-top: 1px solid $color-failure;
+        }
       }
     }
     .login__btn{

@@ -10,7 +10,9 @@ export default function HomeWhoWeHelp() {
     const [dataDisplay, setDataDisplay] = useState([foundations[0],foundations[1],foundations[2]]);
     const [pages, setPages] = useState([1,2,3]);
     const [activePage, setActivePage] = useState(false);
-    const [activeInstitute, setActiveInstitute] = useState("fundations");
+    const [activeFoundations, setActiveFoundations] = useState(true);
+    const [activeOrganizations, setActiveOrganizations] = useState(false);
+    const [activeCollections, setActiveCollections] = useState(false);
 
     let Element = Scroll.Element;
 
@@ -19,7 +21,9 @@ export default function HomeWhoWeHelp() {
         setData(foundations);
         setPages(SetArrayPages(Math.floor(foundations.length/3)));
         setDataDisplay([foundations[0],foundations[1],foundations[2]]);
-        setActiveInstitute("foundations");
+        setActiveFoundations(true);
+        setActiveOrganizations(false);
+        setActiveCollections(false);
     }
 
     const handleOnClickNonGovernmentalOrganizations = (event) => {
@@ -30,7 +34,9 @@ export default function HomeWhoWeHelp() {
             nonGovernmentalOrganizations[0],
             nonGovernmentalOrganizations[1],
             nonGovernmentalOrganizations[2]]);
-        setActiveInstitute("organizations");
+        setActiveFoundations(false);
+        setActiveOrganizations(true);
+        setActiveCollections(false)
     }
 
     const handleOnClickLocalCollection= (event) => {
@@ -38,35 +44,16 @@ export default function HomeWhoWeHelp() {
         setData(localCollection);
         setPages(SetArrayPages(Math.floor(localCollection.length/3)));
         setDataDisplay([localCollection[0],localCollection[1],localCollection[2]]);
-        setActiveInstitute("collections");
+        setActiveFoundations(false);
+        setActiveOrganizations(false)
+        setActiveCollections(true);
     }
 
     const handleOnClickPage = (event, page) => {
         event.preventDefault();
         setDataDisplay(SetThreeDataDisplay(data,page));
-        
+        setActivePage(true);
     }
-
-    let classNameFoundations = 'btn-institution active';
-    let classNameOrganizations = 'btn-institution';
-    let classNameCollections = 'btn-institution';
-
-        if (activeInstitute === "foundations") {
-            classNameFoundations += ' active';
-            classNameOrganizations = 'btn-institution';
-            classNameCollections = 'btn-institution';
-        }
-        if (activeInstitute === "organizations") {
-            classNameOrganizations += ' active';
-            classNameFoundations = 'btn-institution';
-            classNameCollections = 'btn-institution';
-
-        }
-        if (activeInstitute === "collections") {
-            classNameCollections += ' active';
-            classNameFoundations = 'btn-institution';
-            classNameOrganizations = 'btn-institution';
-        }
 
     return (
         <Element name="whoWeHelpElement">
@@ -75,13 +62,21 @@ export default function HomeWhoWeHelp() {
                     <h2 className='help__title'>Komu pomagamy?</h2>
                     <div className='decoration decoration--who-we-help'> </div>
                     <div className='help__institutions'>
-                        <button className = {classNameFoundations} onClick={handleOnClickFoundations}>
+                        <button
+                            className = {`btn-institution ${activeFoundations ? "active" : ""}`}
+                            onClick={handleOnClickFoundations}
+                        >
                             Fundacjom
                         </button>
-                        <button  className = {classNameOrganizations} onClick={handleOnClickNonGovernmentalOrganizations}>
+                        <button  
+                            className = {`btn-institution ${activeOrganizations ? "active" : ""}`}
+                            onClick={handleOnClickNonGovernmentalOrganizations}
+                        >
                             Organizacjom pozarządowym
                         </button>
-                        <button  className = {classNameCollections} onClick={handleOnClickLocalCollection}>
+                        <button  
+                       className = {`btn-institution ${activeCollections ? "active" : ""}`}
+                        onClick={handleOnClickLocalCollection}>
                             Lokalnym zbiórkom
                         </button>
                     </div>
@@ -94,8 +89,7 @@ export default function HomeWhoWeHelp() {
                         { pages.length > 1 &&
                             pages.map((page,index) =>
                                 <button
-
-                                    className='btn btn-pagination'
+                                    className = {`btn btn-pagination ${activePage ? 'active' : ''}`}
                                     key={index}
                                     onClick={(e) => handleOnClickPage(e,page)}
                                 >

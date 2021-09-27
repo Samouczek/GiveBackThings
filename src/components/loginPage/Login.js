@@ -19,7 +19,6 @@ function Login() {
             setSuccess(true);
         }
     }
-        console.log(password.length);
     return (
         <div className='container login-section'>
             <div className='row'>

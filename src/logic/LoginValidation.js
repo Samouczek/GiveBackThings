@@ -5,6 +5,9 @@ export const emailValidation = (email) => {
 }
 
 export const passwordValidation = (password) => {
-    console.log(password.length);
     return (password.length < 6 || password===false);
+}
+
+export const passwordAgainValidation = (password, passwordAgain) => {
+    return (password !== passwordAgain || passwordAgain===false);
 }

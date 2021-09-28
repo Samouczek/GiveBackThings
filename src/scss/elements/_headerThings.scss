@@ -1,6 +1,7 @@
 
 .things_header {
-  margin-right: 8.875rem;
+  padding-left:1rem;
+  padding-right: 1rem;
 
   .image-things-header{
     display: none;
@@ -26,11 +27,12 @@
         font-size: 2.5rem;
         line-height: 3.4375rem;
         font-weight: 300;
-        padding-bottom: 3rem;
       }
       .things_steps{
         display: flex;
         justify-content: center;
+        margin-top:4.5rem;
+        margin-bottom: 4.5rem;
         .things_step{
           text-align: center;
           font-weight: 300;
@@ -113,6 +115,8 @@
 
 @media (min-width: $breakpoint-lg) {
   .things_header  {
+    padding-left: 0;
+    padding-right: 0;
     .image-things-header{
       display: block;
       background: transparent url('../../assets/Form-Hero-Image.jpg') no-repeat padding-box;
@@ -127,7 +131,7 @@
         padding-top: 8.375rem;
       }
       .things_steps{
-        padding-bottom: 8.8125rem;
+        padding-bottom: 4.8125rem;
       }
     }
   }

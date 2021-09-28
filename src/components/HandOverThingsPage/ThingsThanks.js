@@ -10,7 +10,7 @@ function ThingsThanks() {
         <div className='container thanks-section'>
             <div className='row background-step'>
                 <div className='thanks-left col-lg-8 col-sm-12'>
-                    <h2 className='step-form-title'>
+                    <h2 className='thanks-title'>
                         Dziękujemy za przesłanie formularza <br />
                         Na maila prześlemy wszelkie <br />
                         informacje o odbiorze.

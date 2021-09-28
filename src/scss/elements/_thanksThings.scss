@@ -1,0 +1,19 @@
+
+.thanks-left{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  .thanks-title{
+    text-align: center;
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 3.4375rem;
+    letter-spacing: -0.8px;
+    padding-top: 20.625rem;
+  }
+  .decoration--header{
+    align-self: center;
+    padding-top: 3rem;
+    padding-bottom: 20.625rem;
+  }
+}

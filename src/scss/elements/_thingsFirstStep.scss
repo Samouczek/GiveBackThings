@@ -1,0 +1,41 @@
+
+.first-step{
+  background-image: url("../../assets/Background-Form.jpg");
+  background-size: cover;
+  padding-left: 2rem;
+  .first-step-left {
+    .first-step-form {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 9.875rem;
+
+      .first-step-form-title {
+        font-size: 2.25rem;
+        line-height: 2.8125rem;
+        font-weight: 600;
+      }
+
+      .first-step-label {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: left;
+        position: relative;
+        padding: 1.5rem;
+      }
+
+      .step-change {
+
+      }
+    }
+  }
+}
+
+input[type="radio"]{
+  padding-right: 1.5rem;
+}
+
+@media (min-width: $breakpoint-lg) {
+  .first-step{
+    padding-left: 8.875rem;
+  }
+}

@@ -16,25 +16,25 @@ function ThingsThirdStep() {
                                 <option value="5">Katowice</option>
                             </select>
                         <h3 className='step-form-subtitle'>Komu chcesz pomóc?</h3>
-                        <div className='first-step-checkboxes'>
-                            <label className='first-step-label'>
-                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                        <div className='third-step-checkboxes'>
+                            <label className='third-step-label'>
+                                <input className='third-step-input' type="checkbox"/>
                                 dzieciom
                             </label>
-                            <label className='first-step-label'>
-                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                            <label className='third-step-label'>
+                                <input className='third-step-input' type="checkbox" />
                                 samotnym matkom
                             </label>
-                            <label className='first-step-label'>
-                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                            <label className='third-step-label'>
+                                <input className='third-step-input' type="checkbox" />
                                 bezdomnym
                             </label>
-                            <label className='first-step-label'>
-                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                            <label className='third-step-label'>
+                                <input className='third-step-input' type="checkbox" />
                                 niepełnosprawnym
                             </label>
-                            <label className='first-step-label'>
-                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                            <label className='third-step-label'>
+                                <input className='third-step-input' type="checkbox" />
                                 osobom starszym
                             </label>
                         </div>

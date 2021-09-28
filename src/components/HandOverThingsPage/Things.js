@@ -4,6 +4,7 @@ import React from "react";
 import ThingsHeader from "./ThingsHeader";
 import ThingsImportantNotice from "./ThingsImportantNotice";
 import ThingsFirstStep from "./ThingsFirstStep";
+import ThingsSecondStep from "./ThingsSecondStep";
 
 function Things() {
     return (
@@ -11,6 +12,7 @@ function Things() {
             <ThingsHeader />
             <ThingsImportantNotice />
             <ThingsFirstStep />
+            <ThingsSecondStep />
             <HomeContactUs />
             <Footer />
         </>

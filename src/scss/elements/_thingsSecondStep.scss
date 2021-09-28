@@ -1,21 +1,18 @@
 
-  .first-step-left {
-    .first-step-form {
+  .second-step-left {
+    .second-step-form {
       display: flex;
       flex-direction: column;
       padding-bottom: 9.875rem;
 
-      .first-step-label {
+      .second-step-label {
         font-size: 1.5rem;
         line-height: 2rem;
         text-align: left;
         position: relative;
-        padding: 1.5rem;
+        padding: 3rem 1.5rem 19.375rem 1.5rem;
       }
 
-      .step-change {
-
-      }
     }
   }
 
@@ -23,4 +20,3 @@
 input[type="radio"]{
   padding-right: 1.5rem;
 }
-

@@ -2,7 +2,7 @@
 function ThingsFirstStep() {
     return (
         <div className='container first-step-section'>
-            <div className='row first-step'>
+            <div className='row background-step'>
                 <div className='first-step-left col-lg-6 col-sm-12'>
                     <div className='number-step'>Krok 1/4</div>
                     <form className='first-step-form'>

@@ -3,7 +3,7 @@ import React from 'react';
 function ThingsSecondStep() {
     return (
         <div className='container second-step-section'>
-            <div className='row second-step'>
+            <div className='row background-step'>
                 <div className='second-step-left col-lg-6 col-sm-12'>
                     <div className='number-step'>Krok 2/4</div>
                     <form className='second-step-form'>

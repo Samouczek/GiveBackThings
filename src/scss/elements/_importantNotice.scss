@@ -1,0 +1,22 @@
+
+.important-content{
+  background-color: $color-yellow;
+  padding: 3.125rem 3rem;
+  .important-title{
+    font-size: 2.25rem;
+    line-height: 2rem;
+    text-align: left;
+    font-weight: 600;
+  }
+  .important-text{
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    text-align: left;
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .important-content {
+    padding: 3.125rem 8.875rem;
+  }
+}

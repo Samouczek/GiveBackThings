@@ -16,10 +16,28 @@ function ThingsThirdStep() {
                                 <option value="5">Katowice</option>
                             </select>
                         <h3 className='step-form-subtitle'>Komu chcesz pomóc?</h3>
-                        <label className='first-step-label'>
-                            <input className='third-step-input' type="checkbox" value="option2" name="things"/>
-                            dzieciom
-                        </label>
+                        <div className='first-step-checkboxes'>
+                            <label className='first-step-label'>
+                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                                dzieciom
+                            </label>
+                            <label className='first-step-label'>
+                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                                samotnym matkom
+                            </label>
+                            <label className='first-step-label'>
+                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                                bezdomnym
+                            </label>
+                            <label className='first-step-label'>
+                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                                niepełnosprawnym
+                            </label>
+                            <label className='first-step-label'>
+                                <input className='third-step-input' type="checkbox" value="option2" name="things"/>
+                                osobom starszym
+                            </label>
+                        </div>
                        <h3 className='step-form-subtitle'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
                         <input className='third-step-input-text' type="text" />
                     </form>

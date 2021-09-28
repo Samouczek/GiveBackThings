@@ -1,16 +1,13 @@
 import Navigation from "../Navigation";
-import {Link} from "react-router-dom";
-import {LOG_IN} from "../../constants/Route";
 
 function ThingsHeader() {
     return (
-        <div className='container header'>
+        <div className='container things_header'>
             <div className='row'>
                 <div className='col-lg-6 image-things-header'>
                 </div>
                 <div className='col-lg-6 col-sm-12 right-header'>
                     <Navigation />
-                    <div className='header-content'>
                         <h1>
                             Oddaj rzeczy, których już nie chcesz <br />
                             POTRZEBUJĄCYM
@@ -35,8 +32,6 @@ function ThingsHeader() {
                                 <p className='things_step_title'>Zamów <br/> kuriera</p>
                             </div>
                         </div>
-                    </div>
-
                 </div>
             </div>
         </div>

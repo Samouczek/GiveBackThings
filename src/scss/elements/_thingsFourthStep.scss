@@ -1,0 +1,36 @@
+
+.fourth-step-form{
+  display: flex;
+  padding-top: 3.125rem;
+  padding-bottom: 12.8125rem;
+  .fourth-step-inputs{
+    flex-grow: 1;
+    display: flex;
+    .step-form-subtitle{
+      padding-bottom: 1.25rem;
+    }
+    flex-direction: column;
+    .fourth-step-label{
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-weight: 300;
+      text-align: left;
+      height: 5rem;
+      position: relative;
+      color: $color-black;
+      .fourth-step-input{
+        width: 16rem;
+        height: 2.5rem;
+        background-color: transparent;
+        border: 0.75px solid $color-dark-gray;
+        position: absolute;
+        left: 8.5rem;
+        top: 0;
+        margin-bottom: 1.25rem;
+      }
+      .comments-courier{
+        height: 7.5rem;
+      }
+    }
+  }
+}

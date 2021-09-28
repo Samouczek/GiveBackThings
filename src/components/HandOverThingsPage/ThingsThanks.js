@@ -7,8 +7,20 @@ import ThingsFirstStep from "./ThingsFirstStep";
 
 function ThingsThanks() {
     return (
-        <>
-        </>
+        <div className='container thanks-section'>
+            <div className='row background-step'>
+                <div className='thanks-left col-lg-8 col-sm-12'>
+                    <h2 className='step-form-title'>
+                        Dziękujemy za przesłanie formularza <br />
+                        Na maila prześlemy wszelkie <br />
+                        informacje o odbiorze.
+                    </h2>
+                    <div className='decoration decoration--header'> </div>
+                </div>
+                <div  className='thanks-right col-lg-3 col-sm-12'>
+                </div>
+            </div>
+        </div>
     )
 }
 

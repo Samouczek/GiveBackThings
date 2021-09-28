@@ -7,6 +7,7 @@ import ThingsFirstStep from "./ThingsFirstStep";
 import ThingsSecondStep from "./ThingsSecondStep";
 import ThingsThirdStep from "./ThingsThirdStep";
 import ThingsFourthStep from "./ThingsFourthStep";
+import ThingsThanks from "./ThingsThanks";
 
 function Things() {
     return (
@@ -17,6 +18,7 @@ function Things() {
             <ThingsSecondStep />
             <ThingsThirdStep />
             <ThingsFourthStep />
+            <ThingsThanks />
             <HomeContactUs />
             <Footer />
         </>

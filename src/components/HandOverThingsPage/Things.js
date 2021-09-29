@@ -36,6 +36,10 @@ function Things() {
         dataForm.things = data;
     }
 
+    const handleBagsDone = (data) => {
+        dataForm.bags = data;
+    }
+
     return (
         <>
             <ThingsHeader />
@@ -50,7 +54,10 @@ function Things() {
             }
             {
                 step === 2 &&
-                <ThingsSecondStep onDoneStep={handleStepDone} />
+                <ThingsSecondStep
+                    numberBags={dataForm.bags}
+                    onDoneBags={handleBagsDone}
+                    onDoneStep={handleStepDone} />
             }
             {
                 step === 3 &&

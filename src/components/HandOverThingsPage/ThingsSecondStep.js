@@ -1,7 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
-function ThingsSecondStep({onDoneStep}) {
-    const [choice, setChoice] = useState(false);
+function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
+    const [bags, setBags] = useState(false);
+
+    useEffect(() => {
+            if (typeof onDoneBags === 'function'){
+                onDoneBags(bags);
+            }
+    })
 
     const handleOnClickNext = (e) => {
         e.preventDefault();
@@ -26,7 +32,7 @@ function ThingsSecondStep({onDoneStep}) {
                         <h2 className='step-form-title'>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
                         <label className='second-step-label'>
                             Liczba 60l worków:
-                            <select value={choice} className='second-step-select' >
+                            <select value={bags} className='second-step-select' onChange={e => setBags(e.target.value)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

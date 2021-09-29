@@ -32,6 +32,18 @@ function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
                         <h2 className='step-form-title'>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
                         <label className='second-step-label'>
                             Liczba 60l worków:
+                            <div className="select-heading">
+                                <div className="select-heading">wybierz</div>
+                                <div className="select-down-arrow"> </div>
+                                <div className="select-up-arrow"> </div>
+                            </div>
+                            <ul>
+                                <li className="select-option">1</li>
+                                <li className="select-option">2</li>
+                                <li className="select-option">3</li>
+                                <li className="select-option">4</li>
+                                <li className="select-option">5</li>
+                            </ul>
                             <select value={bags} className='second-step-select' onChange={e => setBags(e.target.value)}>
                                 <option value="1">1</option>
                                 <option value="2">2</option>

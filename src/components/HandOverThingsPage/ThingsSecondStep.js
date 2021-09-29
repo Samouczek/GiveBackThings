@@ -8,7 +8,6 @@ function ThingsSecondStep({onDoneStep}) {
             if (typeof onDoneStep === 'function'){
                 onDoneStep(3);
             }
-
     }
 
     const handleOnClickBack = (e) => {
@@ -16,7 +15,6 @@ function ThingsSecondStep({onDoneStep}) {
         if (typeof onDoneStep === 'function'){
             onDoneStep(1);
         }
-
     }
 
     return (

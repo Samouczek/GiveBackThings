@@ -1,6 +1,21 @@
 import React from "react";
 
 function ThingsThirdStep({onDoneStep}) {
+
+    const handleOnClickNext = (e) => {
+        e.preventDefault();
+        if (typeof onDoneStep === 'function'){
+            onDoneStep(4);
+        }
+    }
+
+    const handleOnClickBack = (e) => {
+        e.preventDefault();
+        if (typeof onDoneStep === 'function'){
+            onDoneStep(2);
+        }
+    }
+
     return (
         <div className='container third-step-section'>
             <div className='row background-step'>
@@ -42,8 +57,8 @@ function ThingsThirdStep({onDoneStep}) {
                         <input className='third-step-input-text' type="text" />
                     </form>
                     <div className='step-change'>
-                        <button className='btn-step btn-next'>Wstecz</button>
-                        <button className='btn-step btn-next'>Dalej</button>
+                        <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>
+                        <button className='btn-step btn-next'onClick={handleOnClickNext}>Dalej</button>
                     </div>
                 </div>
                 <div  className='first-step-right col-lg-6 col-sm-12'>

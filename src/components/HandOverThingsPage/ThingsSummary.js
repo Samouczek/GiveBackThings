@@ -22,52 +22,54 @@ function ThingsSummary({thingsForm, onDoneStep}) {
     }
 
     return (
-        <div className='container fourth-step-section'>
+        <div className='container summary-section'>
             <div className='row background-step'>
-                <div className='fourth-step-left col-lg-8 col-sm-12'>
+                <div className='summary-left col-lg-8 col-sm-12'>
                     <h2 className='step-form-title'>Podsumowanie Twojej darowizny</h2>
                     <h3 className='step-form-subtitle'>Oddajesz:</h3>
-                    <div className='give-back give-back-first'>
+                    <div className='give-back '>
+                        <div className='give-back__first'> </div>
                         <p>{`${thingsForm.bags} worki, ${thingsForm.things}, ${thingsForm.helpGroups.map((group) => group)} `}
                         </p>
                     </div>
-                    <div className='give-back give-back-second'>
+                    <div className='give-back'>
+                        <div className='give-back__second'> </div>
                         <p>{`dla lokalizacji: ${thingsForm.localization ? thingsForm.localization : thingsForm.localizationSpecific} `}
                         </p>
                     </div>
-                    <form className='fourth-step-form'>
-                        <div className='fourth-step-inputs'>
+                    <form className='summary-form'>
+                        <div className='summary-inputs'>
                             <h3 className='step-form-subtitle'>Adres odbioru:</h3>
-                            <label className='fourth-step-label'>
+                            <label className='summary-label'>
                                 Ulica
-                                <div className='fourth-step-input'> {thingsForm.street} </div>
+                                <div className='summary-input'> {thingsForm.street} </div>
                             </label>
-                            <label className='fourth-step-label'>
+                            <label className='summary-label'>
                                 Miasto
-                                <div className='fourth-step-input'> {thingsForm.city} </div>
+                                <div className='summary-input'> {thingsForm.city} </div>
                             </label>
-                            <label className='fourth-step-label'>
+                            <label className='summary-label'>
                                 Kod <br />pocztowy
-                                <div className='fourth-step-input'> {thingsForm.postCode} </div>
+                                <div className='summary-input'> {thingsForm.postCode} </div>
                             </label>
-                            <label className='fourth-step-label'>
+                            <label className='summary-label'>
                                 Numer <br />telefonu
-                                <div className='fourth-step-input'> {thingsForm.phone} </div>
+                                <div className='summary-input'> {thingsForm.phone} </div>
                             </label>
                         </div>
-                        <div className='fourth-step-inputs'>
+                        <div className='summary-inputs'>
                             <h3 className='step-form-subtitle'>Termin odbioru:</h3>
-                            <label className='fourth-step-label'>
+                            <label className='summary-label'>
                                 Data
-                                <div className='fourth-step-input'> {thingsForm.date} </div>
+                                <div className='summary-input'> {thingsForm.date} </div>
                             </label>
-                            <label className='fourth-step-label'>
+                            <label className='summary-label'>
                                 Godzina
-                                <div className='fourth-step-input'> {thingsForm.time} </div>
+                                <div className='summary-input'> {thingsForm.time} </div>
                             </label>
-                            <label className='fourth-step-label'>
+                            <label className='summary-label'>
                                 Uwagi <br />do kuriera
-                                <div className='fourth-step-input'> {thingsForm.note} </div>
+                                <div className='summary-input'> {thingsForm.note} </div>
                             </label>
                         </div>
                     </form>
@@ -76,7 +78,7 @@ function ThingsSummary({thingsForm, onDoneStep}) {
                         <button className='btn-step btn-next' onClick={handleOnClickNext}>Potwierdzam</button>
                     </div>
                 </div>
-                <div  className='fourth-step-right col-lg-3 col-sm-12'>
+                <div  className='summary-right col-lg-3 col-sm-12'>
                 </div>
             </div>
         </div>

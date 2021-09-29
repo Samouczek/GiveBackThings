@@ -1,0 +1,69 @@
+
+.summary-left{
+  color: $color-black;
+  .step-form-title{
+    padding-top: 4.375rem;
+  }
+  .step-form-subtitle{
+    padding-top: 2.8125rem;
+  }
+  .give-back{
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+    color: $color-black;
+    display: flex;
+    padding-top: 1.25rem;
+    &__first{
+      content: url("../../assets/Icon-1.svg");
+      width: 3.125rem;
+      height: 3.125rem;
+      margin-right: 1.25rem;
+    }
+    &__second {
+        content: url("../../assets/Icon-4.svg");
+        width: 3.125rem;
+        height: 3.125rem;
+        margin-right: 1.25rem;
+    }
+  }
+  .summary-form {
+    display: flex;
+    padding-top: 3.125rem;
+    padding-bottom: 3.625rem;
+
+    .summary-inputs {
+      flex-grow: 1;
+      display: flex;
+
+      .step-form-subtitle {
+        padding-bottom: 1.25rem;
+      }
+
+      flex-direction: column;
+
+      .summary-label {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        font-weight: 300;
+        text-align: left;
+        height: 5rem;
+        position: relative;
+        color: $color-black;
+
+        .summary-input {
+          width: 16rem;
+          height: 2.5rem;
+          background-color: transparent;
+          position: absolute;
+          left: 8.5rem;
+          top: 0;
+          margin-bottom: 1.25rem;
+        }
+
+        .comments-courier {
+          height: 7.5rem;
+        }
+      }
+    }
+  }
+}

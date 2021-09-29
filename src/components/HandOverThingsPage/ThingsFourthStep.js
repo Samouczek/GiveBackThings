@@ -1,6 +1,19 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
-function ThingsFourthStep({onDoneStep}) {
+function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
+    const [street, setStreet] = useState(form.street);
+    const [city, setCity] = useState(form.city);
+    const [postalCode, setPostalCode] = useState(form.postalCode);
+    const [phone, setPhone] = useState(form.phone);
+    const [date, setDate] = useState(form.date);
+    const [time, setTime] = useState(form.time);
+    const [note, setNote] = useState(form.note);
+
+    useEffect(() => {
+        if (typeof onDoneStepFourth === 'function'){
+           onDoneStepFourth(street,city,postalCode,phone,date,time,note);
+        }
+    },[city,street,postalCode,phone,date,time,note])
 
     const handleOnClickNext = (e) => {
         e.preventDefault();
@@ -8,7 +21,6 @@ function ThingsFourthStep({onDoneStep}) {
             onDoneStep(5);
         }
     }
-
     const handleOnClickBack = (e) => {
         e.preventDefault();
         if (typeof onDoneStep === 'function'){
@@ -27,34 +39,62 @@ function ThingsFourthStep({onDoneStep}) {
                             <h3 className='step-form-subtitle'>Adres odbioru:</h3>
                             <label className='fourth-step-label'>
                                 Ulica
-                                <input className='fourth-step-input' type="text"/>
+                                <input
+                                    className='fourth-step-input'
+                                    type="text"
+                                    onChange={ e => setStreet(e.target.value)}
+                                />
                             </label>
                             <label className='fourth-step-label'>
                                 Miasto
-                                <input className='fourth-step-input' type="text" />
+                                <input
+                                    className='fourth-step-input'
+                                    type="text"
+                                    onChange={ e => setCity(e.target.value)}
+                                />
                             </label>
                             <label className='fourth-step-label'>
                                 Kod <br />pocztowy
-                                <input className='fourth-step-input' type="text" />
+                                <input
+                                    className='fourth-step-input'
+                                    type="text"
+                                    onChange={ e => setPostalCode(e.target.value)}
+                                />
                             </label>
                             <label className='fourth-step-label'>
                                 Numer <br />telefonu
-                                <input className='fourth-step-input' type="tel" />
+                                <input
+                                    className='fourth-step-input'
+                                    type="tel"
+                                    onChange={ e => setPhone(e.target.value)}
+                                />
                             </label>
                         </div>
                         <div className='fourth-step-inputs'>
                             <h3 className='step-form-subtitle'>Termin odbioru:</h3>
                             <label className='fourth-step-label'>
                                Data
-                                <input className='fourth-step-input' type="date"/>
+                                <input
+                                    className='fourth-step-input'
+                                    type="date"
+                                    onChange={ e => setDate(e.target.value)}
+                                />
                             </label>
                             <label className='fourth-step-label'>
                                 Godzina
-                                <input className='fourth-step-input' type="time" />
+                                <input
+                                    className='fourth-step-input'
+                                    type="time"
+                                    onChange={ e => setTime(e.target.value)}
+                                />
                             </label>
                             <label className='fourth-step-label'>
                                 Uwagi <br />do kuriera
-                                <input className='fourth-step-input comments-courier' type="textarea" />
+                                <input
+                                    className='fourth-step-input comments-courier'
+                                    type="textarea"
+                                    onChange={ e => setNote(e.target.value)}
+                                />
                             </label>
                         </div>
                     </form>

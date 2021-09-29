@@ -47,6 +47,16 @@ function Things() {
     const handleLocalizationSpecificDone = (data) => {
         dataForm.localizationSpecific = data;
     }
+    const handleFourthStepDone = (street,city,postCode,phone,date,time,note) => {
+        dataForm.street = street;
+        dataForm.city = city;
+        dataForm.postCode = postCode;
+        dataForm.phone = phone;
+        dataForm.date = date;
+        dataForm.time=time;
+        dataForm.note = note;
+        console.log(dataForm); 
+    }
 
     return (
         <>
@@ -78,7 +88,10 @@ function Things() {
             }
             {
                 step === 4 &&
-                <ThingsFourthStep onDoneStep={handleStepDone} />
+                <ThingsFourthStep
+                    form={dataForm}
+                    onDoneStepFourth={handleFourthStepDone}
+                    onDoneStep={handleStepDone} />
             }
             {
                 step === 5 &&

@@ -1,6 +1,6 @@
 import React from "react";
 
-function ThingsFourthStep() {
+function ThingsFourthStep({onDoneStep}) {
     return (
         <div className='container fourth-step-section'>
             <div className='row background-step'>

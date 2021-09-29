@@ -1,7 +1,24 @@
 import React, {useState} from 'react';
 
-function ThingsSecondStep() {
+function ThingsSecondStep({onDoneStep}) {
     const [choice, setChoice] = useState(false);
+
+    const handleOnClickNext = (e) => {
+        e.preventDefault();
+            if (typeof onDoneStep === 'function'){
+                onDoneStep(3);
+            }
+
+    }
+
+    const handleOnClickBack = (e) => {
+        e.preventDefault();
+        if (typeof onDoneStep === 'function'){
+            onDoneStep(1);
+        }
+
+    }
+
     return (
         <div className='container second-step-section'>
             <div className='row background-step'>
@@ -21,8 +38,8 @@ function ThingsSecondStep() {
                         </label>
                     </form>
                     <div className='step-change'>
-                        <button className='btn-step btn-next'>Wstecz</button>
-                        <button className='btn-step btn-next'>Dalej</button>
+                        <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>
+                        <button className='btn-step btn-next'onClick={handleOnClickNext}>Dalej</button>
                     </div>
                 </div>
                 <div  className='first-step-right col-lg-6 col-sm-12'>

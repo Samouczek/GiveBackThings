@@ -5,7 +5,7 @@ import ThingsHeader from "./ThingsHeader";
 import ThingsImportantNotice from "./ThingsImportantNotice";
 import ThingsFirstStep from "./ThingsFirstStep";
 
-function ThingsSummary({thingsForm}) {
+function ThingsSummary({thingsForm, onDoneStep}) {
     return (
         <div className='container fourth-step-section'>
             <div className='row background-step'>

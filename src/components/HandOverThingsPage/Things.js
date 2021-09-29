@@ -50,19 +50,19 @@ function Things() {
             }
             {
                 step === 2 &&
-                <ThingsSecondStep/>
+                <ThingsSecondStep onDoneStep={handleStepDone} />
             }
             {
                 step === 3 &&
-                <ThingsThirdStep/>
+                <ThingsThirdStep onDoneStep={handleStepDone} />
             }
             {
                 step === 4 &&
-                <ThingsFourthStep/>
+                <ThingsFourthStep onDoneStep={handleStepDone} />
             }
             {
                 step === 5 &&
-                <ThingsSummary thingsForm={dataForm} />
+                <ThingsSummary thingsForm={dataForm} onDoneStep={handleStepDone} />
             }
             {
                 step === 6 &&

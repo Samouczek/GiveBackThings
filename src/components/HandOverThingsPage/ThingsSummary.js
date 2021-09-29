@@ -26,39 +26,48 @@ function ThingsSummary({thingsForm, onDoneStep}) {
             <div className='row background-step'>
                 <div className='fourth-step-left col-lg-8 col-sm-12'>
                     <h2 className='step-form-title'>Podsumowanie Twojej darowizny</h2>
+                    <h3 className='step-form-subtitle'>Oddajesz:</h3>
+                    <div className='give-back give-back-first'>
+                        <p>{`${thingsForm.bags} worki, ${thingsForm.things}, ${thingsForm.helpGroups.map((group) => group)} `}
+                        </p>
+                    </div>
+                    <div className='give-back give-back-second'>
+                        <p>{`dla lokalizacji: ${thingsForm.localization ? thingsForm.localization : thingsForm.localizationSpecific} `}
+                        </p>
+                    </div>
                     <form className='fourth-step-form'>
                         <div className='fourth-step-inputs'>
                             <h3 className='step-form-subtitle'>Adres odbioru:</h3>
                             <label className='fourth-step-label'>
                                 Ulica
-                                <input className='fourth-step-input' type="text"/>
+                                <div className='fourth-step-input'> {thingsForm.street} </div>
                             </label>
                             <label className='fourth-step-label'>
                                 Miasto
-                                <input className='fourth-step-input' type="text" />
+                                <div className='fourth-step-input'> {thingsForm.city} </div>
                             </label>
                             <label className='fourth-step-label'>
                                 Kod <br />pocztowy
-                                <input className='fourth-step-input' type="text" />
+                                <div className='fourth-step-input'> {thingsForm.postCode} </div>
                             </label>
                             <label className='fourth-step-label'>
                                 Numer <br />telefonu
-                                <input className='fourth-step-input' type="tel" />
+                                <div className='fourth-step-input'> {thingsForm.phone} </div>
                             </label>
                         </div>
                         <div className='fourth-step-inputs'>
                             <h3 className='step-form-subtitle'>Termin odbioru:</h3>
                             <label className='fourth-step-label'>
                                 Data
-                                <input className='fourth-step-input' type="date"/>
+                                <div className='fourth-step-input'> {thingsForm.date} </div>
                             </label>
                             <label className='fourth-step-label'>
                                 Godzina
-                                <input className='fourth-step-input' type="time" />
+                                <div className='fourth-step-input'> {thingsForm.time} </div>
                             </label>
                             <label className='fourth-step-label'>
                                 Uwagi <br />do kuriera
-                                <input className='fourth-step-input comments-courier' type="textarea" />
+                                <div className='fourth-step-input'> {thingsForm.note} </div>
                             </label>
                         </div>
                     </form>

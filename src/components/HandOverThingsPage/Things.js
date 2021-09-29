@@ -10,23 +10,23 @@ import ThingsFourthStep from "./ThingsFourthStep";
 import ThingsThanks from "./ThingsThanks";
 import ThingsSummary from "./ThingsSummary";
 
+const dataForm = {
+    things: false,
+    bags: 0,
+    localization: false,
+    helpGroups: [],
+    localizationSpecific: false,
+    street: false,
+    city: false,
+    postCode: false,
+    phone: false,
+    date: false,
+    time: false,
+    note: false
+}
+
 function Things() {
     const [step,setStep] = useState(1);
-
-    const dataForm = {
-        things: false,
-        bags: 0,
-        localization: false,
-        helpGroups: [],
-        localizationSpecific: false,
-        street: false,
-        city: false,
-        postCode: false,
-        phone: false,
-        date: false,
-        time: false,
-        note: false
-    }
 
     const handleStepDone = (stepNumber) => {
         setStep(stepNumber);
@@ -42,7 +42,6 @@ function Things() {
     }
     const handleHelpGroupsDone = (data) => {
         dataForm.helpGroups = data;
-        console.log("Rodzic: " + dataForm.helpGroups);
     }
     const handleLocalizationSpecificDone = (data) => {
         dataForm.localizationSpecific = data;
@@ -55,9 +54,9 @@ function Things() {
         dataForm.date = date;
         dataForm.time=time;
         dataForm.note = note;
-        console.log(dataForm); 
-    }
 
+    }
+    console.log(dataForm);
     return (
         <>
             <ThingsHeader />

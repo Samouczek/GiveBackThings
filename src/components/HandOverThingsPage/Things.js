@@ -31,13 +31,21 @@ function Things() {
     const handleStepDone = (stepNumber) => {
         setStep(stepNumber);
     }
-
     const handleThingsDone = (data) => {
         dataForm.things = data;
     }
-
     const handleBagsDone = (data) => {
         dataForm.bags = data;
+    }
+    const handleLocalizationDone = (data) => {
+        dataForm.localization = data;
+    }
+    const handleHelpGroupsDone = (data) => {
+        dataForm.helpGroups = data;
+        console.log("Rodzic: " + dataForm.helpGroups);
+    }
+    const handleLocalizationSpecificDone = (data) => {
+        dataForm.localizationSpecific = data;
     }
 
     return (
@@ -61,7 +69,12 @@ function Things() {
             }
             {
                 step === 3 &&
-                <ThingsThirdStep onDoneStep={handleStepDone} />
+                <ThingsThirdStep
+                    form={dataForm}
+                    onDoneLocalization={handleLocalizationDone}
+                    onDoneHelpGroups={handleHelpGroupsDone}
+                    onDoneLocalizationSpecific={handleLocalizationSpecificDone}
+                    onDoneStep={handleStepDone} />
             }
             {
                 step === 4 &&

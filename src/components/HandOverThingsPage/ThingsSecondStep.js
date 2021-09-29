@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
-    const [bags, setBags] = useState(false);
+    const [bags, setBags] = useState(numberBags);
 
     useEffect(() => {
             if (typeof onDoneBags === 'function'){

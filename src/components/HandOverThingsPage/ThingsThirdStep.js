@@ -1,11 +1,41 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
-function ThingsThirdStep({onDoneStep}) {
+function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocalizationSpecific,onDoneStep}) {
+    const [localization, setLocalization] = useState(form.localization);
+    const [localizationSpecific, setLocalizationSpecific] = useState(form.localizationSpecific);
+    const [firstCheckbox, setFirstCheckbox] = useState(false);
+    const [secondCheckbox, setSecondCheckbox] = useState(false);
+    const [thirdCheckbox, setThirdCheckbox] = useState(false);
+    const [fourthCheckbox, setFourthCheckbox] = useState(false);
+    const [fifthCheckbox, setFifthCheckbox] = useState(false);
+    const helpGroups = [];
+
+
+    useEffect(() => {
+        if (typeof onDoneLocalization=== 'function'){
+            onDoneLocalization(localization);
+        }
+    },[localization])
+
+    useEffect(() => {
+        if (typeof onDoneLocalizationSpecific=== 'function'){
+            onDoneLocalizationSpecific(localizationSpecific);
+        }
+    },[localizationSpecific])
 
     const handleOnClickNext = (e) => {
         e.preventDefault();
         if (typeof onDoneStep === 'function'){
             onDoneStep(4);
+        }
+        firstCheckbox && helpGroups.push("dzieciom");
+        secondCheckbox && helpGroups.push("samotnym matkom");
+        thirdCheckbox && helpGroups.push("bezdomnym");
+        fourthCheckbox && helpGroups.push("niepełnosprawnym");
+        fifthCheckbox && helpGroups.push("osobom starszym");
+        if (typeof onDoneHelpGroups === 'function'){
+            console.log(helpGroups);
+            onDoneHelpGroups(helpGroups);
         }
     }
 
@@ -23,38 +53,71 @@ function ThingsThirdStep({onDoneStep}) {
                     <div className='number-step'>Krok 3/4</div>
                     <form className='third-step-form'>
                         <h2 className='step-form-title'>Lokalizacja:</h2>
-                            <select className='second-step-select' >
-                                <option value="1">Poznań</option>
-                                <option value="2">Warszawa</option>
-                                <option value="3">Kraków</option>
-                                <option value="4">Wrocław</option>
-                                <option value="5">Katowice</option>
+                            <select
+                                className='second-step-select'
+                                value={localization}
+                                onChange={e => setLocalization(e.target.value)}
+                            >
+                                <option value="Poznań">Poznań</option>
+                                <option value="Warszawa">Warszawa</option>
+                                <option value="Kraków">Kraków</option>
+                                <option value="Wrocław">Wrocław</option>
+                                <option value="Katowice">Katowice</option>
                             </select>
                         <h3 className='step-form-subtitle'>Komu chcesz pomóc?</h3>
                         <div className='third-step-checkboxes'>
                             <label className='third-step-label'>
-                                <input className='third-step-input' type="checkbox"/>
+                                <input
+                                    className='third-step-input'
+                                    type="checkbox"
+                                    value="dzieciom"
+                                    onChange={() => {setFirstCheckbox(prev => !prev)}}
+                                />
                                 dzieciom
                             </label>
                             <label className='third-step-label'>
-                                <input className='third-step-input' type="checkbox" />
+                                <input
+                                    className='third-step-input'
+                                    type="checkbox"
+                                    value="samotnym matkom"
+                                    onChange={() => {setSecondCheckbox(prev => !prev)}}
+                                />
                                 samotnym matkom
                             </label>
                             <label className='third-step-label'>
-                                <input className='third-step-input' type="checkbox" />
+                                <input
+                                    className='third-step-input'
+                                    type="checkbox"
+                                    value="bezdomnym"
+                                    onChange={() => {setThirdCheckbox(prev => !prev)}}
+                                />
                                 bezdomnym
                             </label>
                             <label className='third-step-label'>
-                                <input className='third-step-input' type="checkbox" />
+                                <input
+                                    className='third-step-input'
+                                    type="checkbox"
+                                    value="niepełnosprawnym"
+                                    onChange={() => {setFourthCheckbox(prev => !prev)}}
+                                />
                                 niepełnosprawnym
                             </label>
                             <label className='third-step-label'>
-                                <input className='third-step-input' type="checkbox" />
+                                <input
+                                    className='third-step-input'
+                                    type="checkbox"
+                                    value="osobom starszym"
+                                    onChange={() => {setFifthCheckbox(prev => !prev)}}
+                                />
                                 osobom starszym
                             </label>
                         </div>
                        <h3 className='step-form-subtitle'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
-                        <input className='third-step-input-text' type="text" />
+                        <input
+                            className='third-step-input-text'
+                            type="text"
+                            onChange={ e => setLocalizationSpecific(e.target.value)}
+                        />
                     </form>
                     <div className='step-change'>
                         <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>

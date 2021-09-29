@@ -11,10 +11,28 @@
         text-align: left;
         position: relative;
         padding: 1.5rem;
-      }
+        display: flex;
+        .click-input{
+          background-color: transparent;
+          border: 0.75px solid $color-dark-gray;
+          height: 2.5rem;
+          width: 2.5rem;
+          position: relative;
 
-      .step-change {
-
+          .click-checked{
+            background-color: $color-yellow;
+            border: 0.75px solid $color-dark-gray;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 2.5rem;
+            width: 2.5rem;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .first-step-input{
+          appearance: none;
+        }
       }
     }
   }

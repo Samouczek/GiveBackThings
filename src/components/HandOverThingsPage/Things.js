@@ -9,6 +9,7 @@ import ThingsThirdStep from "./ThingsThirdStep";
 import ThingsFourthStep from "./ThingsFourthStep";
 import ThingsThanks from "./ThingsThanks";
 import ThingsSummary from "./ThingsSummary";
+import {STEP_1, STEP_2, STEP_3, STEP_4} from "../../constants/Notice";
 
 const dataForm = {
     things: false,
@@ -60,7 +61,10 @@ function Things() {
     return (
         <>
             <ThingsHeader />
-            <ThingsImportantNotice />
+            {step === 1 && <ThingsImportantNotice notice={STEP_1} />}
+            {step === 2 && <ThingsImportantNotice notice={STEP_2} />}
+            {step === 3 && <ThingsImportantNotice notice={STEP_3} />}
+            {step === 4 && <ThingsImportantNotice notice={STEP_4} />}
             {
                 step === 1 &&
                 <ThingsFirstStep

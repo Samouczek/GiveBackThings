@@ -6,6 +6,21 @@ import ThingsImportantNotice from "./ThingsImportantNotice";
 import ThingsFirstStep from "./ThingsFirstStep";
 
 function ThingsSummary({thingsForm, onDoneStep}) {
+
+    const handleOnClickNext = (e) => {
+        e.preventDefault();
+        if (typeof onDoneStep === 'function'){
+            onDoneStep(6);
+        }
+    }
+
+    const handleOnClickBack = (e) => {
+        e.preventDefault();
+        if (typeof onDoneStep === 'function'){
+            onDoneStep(4);
+        }
+    }
+
     return (
         <div className='container fourth-step-section'>
             <div className='row background-step'>
@@ -48,8 +63,8 @@ function ThingsSummary({thingsForm, onDoneStep}) {
                         </div>
                     </form>
                     <div className='step-change'>
-                        <button className='btn-step btn-next'>Wstecz</button>
-                        <button className='btn-step btn-next'>Dalej</button>
+                        <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>
+                        <button className='btn-step btn-next' onClick={handleOnClickNext}>Potwierdzam</button>
                     </div>
                 </div>
                 <div  className='fourth-step-right col-lg-3 col-sm-12'>

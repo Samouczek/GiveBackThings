@@ -66,7 +66,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                             </select>
                         <h3 className='step-form-subtitle'>Komu chcesz pomóc?</h3>
                         <div className='third-step-checkboxes'>
-                            <label className='third-step-label'>
+                            <label className = {`third-step-label ${firstCheckbox ? "active-checked" : ""}`}>
                                 <input
                                     className='third-step-input'
                                     type="checkbox"
@@ -75,7 +75,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                                 />
                                 dzieciom
                             </label>
-                            <label className='third-step-label'>
+                            <label className = {`third-step-label ${secondCheckbox ? "active-checked" : ""}`}>
                                 <input
                                     className='third-step-input'
                                     type="checkbox"
@@ -84,7 +84,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                                 />
                                 samotnym matkom
                             </label>
-                            <label className='third-step-label'>
+                            <label className = {`third-step-label ${thirdCheckbox ? "active-checked" : ""}`}>
                                 <input
                                     className='third-step-input'
                                     type="checkbox"
@@ -93,7 +93,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                                 />
                                 bezdomnym
                             </label>
-                            <label className='third-step-label'>
+                            <label className = {`third-step-label ${fourthCheckbox ? "active-checked" : ""}`}>
                                 <input
                                     className='third-step-input'
                                     type="checkbox"
@@ -102,7 +102,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                                 />
                                 niepełnosprawnym
                             </label>
-                            <label className='third-step-label'>
+                            <label className = {`third-step-label ${fifthCheckbox ? "active-checked" : ""}`}>
                                 <input
                                     className='third-step-input'
                                     type="checkbox"

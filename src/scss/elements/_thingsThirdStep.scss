@@ -1,5 +1,6 @@
 
 .third-step-form{
+  color: $color-black;
   .second-step-select{
     background-color: transparent;
     width: 18.75rem;
@@ -11,14 +12,23 @@
   .third-step-checkboxes{
     padding-top: 1.25rem;
     padding-bottom: 2.375rem;
+    display: flex;
+    flex-wrap: wrap;
     .third-step-label{
       font-size: 1.5rem;
       font-width: 300;
       line-height: 2rem;
-      margin: 0.5rem;
-      .third-step-input{
+      margin: 0.75rem 0.75rem 0.75rem 0;
+      position: relative;
+      border: 0.75px solid $color-dark-gray;
+      padding: 0.75rem 1.625rem;
 
+      .third-step-input{
+        appearance: none;
       }
+    }
+    .active-checked{
+      background-color: $color-yellow;
     }
   }
 

@@ -21,12 +21,18 @@
       .fourth-step-input{
         width: 16rem;
         height: 2.5rem;
+        font-weight: 300;
+        padding: 0 0.5rem;
         background-color: transparent;
         border: 0.75px solid $color-dark-gray;
         position: absolute;
         left: 8.5rem;
         top: 0;
         margin-bottom: 1.25rem;
+        &::placeholder{
+          font-size: 1rem;
+          color: $color-gray;
+        }
       }
       .comments-courier{
         height: 7.5rem;

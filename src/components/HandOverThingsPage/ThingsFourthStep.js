@@ -42,6 +42,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                 <input
                                     className='fourth-step-input'
                                     type="text"
+                                    placeholder=' ul. Poznańska 1'
                                     onChange={ e => setStreet(e.target.value)}
                                 />
                             </label>
@@ -50,6 +51,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                 <input
                                     className='fourth-step-input'
                                     type="text"
+                                    placeholder=' Kraków'
                                     onChange={ e => setCity(e.target.value)}
                                 />
                             </label>
@@ -58,6 +60,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                 <input
                                     className='fourth-step-input'
                                     type="text"
+                                    placeholder=' 00-000'
                                     onChange={ e => setPostalCode(e.target.value)}
                                 />
                             </label>
@@ -66,6 +69,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                 <input
                                     className='fourth-step-input'
                                     type="tel"
+                                    placeholder=' 500 000 000'
                                     onChange={ e => setPhone(e.target.value)}
                                 />
                             </label>
@@ -76,7 +80,8 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                Data
                                 <input
                                     className='fourth-step-input'
-                                    type="date"
+                                    type="text"
+                                    placeholder=' 2020/10/01'
                                     onChange={ e => setDate(e.target.value)}
                                 />
                             </label>
@@ -84,7 +89,8 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                 Godzina
                                 <input
                                     className='fourth-step-input'
-                                    type="time"
+                                    type="text"
+                                    placeholder=' 13:30'
                                     onChange={ e => setTime(e.target.value)}
                                 />
                             </label>
@@ -93,6 +99,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                 <input
                                     className='fourth-step-input comments-courier'
                                     type="textarea"
+                                    placeholder=' uwagi'
                                     onChange={ e => setNote(e.target.value)}
                                 />
                             </label>

@@ -8,7 +8,7 @@ export const cityValidation = (city) => {
 }
 
 export const postCodeValidation = (postCode) => {
-    const pl = /\d{2}=\d{3}/;
+    const pl = /\d{2}-\d{3}/;
     return !pl.test(postCode);
 }
 

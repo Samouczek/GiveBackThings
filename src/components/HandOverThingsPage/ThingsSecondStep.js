@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
     const [bags, setBags] = useState(numberBags);
+    const [openCheckBox, setOpenCheckBox] = useState(false);
 
     useEffect(() => {
             if (typeof onDoneBags === 'function'){
@@ -30,28 +31,24 @@ function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
                     <div className='number-step'>Krok 2/4</div>
                     <form className='second-step-form'>
                         <h2 className='step-form-title'>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h2>
-                        <label className='second-step-label'>
-                            Liczba 60l worków:
+                        <div className='second-step-label'>
+                            <p className='second-step-label-title'>Liczba 60l worków:</p>
                             <div className="select-heading">
-                                <div className="select-heading">wybierz</div>
-                                <div className="select-down-arrow"> </div>
-                                <div className="select-up-arrow"> </div>
+                                <div className="select-title">
+                                    <div className="select-title--title"> wybierz </div>
+                                    {openCheckBox ?
+                                        <div className="select-up-arrow"> </div> : <div className="select-down-arrow"> </div>
+                                    }
+                                </div>
+                                <ul>
+                                    <li className="select-option">1</li>
+                                    <li className="select-option">2</li>
+                                    <li className="select-option">3</li>
+                                    <li className="select-option">4</li>
+                                    <li className="select-option">5</li>
+                                </ul>
                             </div>
-                            <ul>
-                                <li className="select-option">1</li>
-                                <li className="select-option">2</li>
-                                <li className="select-option">3</li>
-                                <li className="select-option">4</li>
-                                <li className="select-option">5</li>
-                            </ul>
-                            <select value={bags} className='second-step-select' onChange={e => setBags(e.target.value)}>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </label>
+                        </div>
                     </form>
                     <div className='step-change'>
                         <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>

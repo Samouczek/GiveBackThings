@@ -1,5 +1,6 @@
 
   .second-step-left {
+    color: $color-black;
     .second-step-form {
       display: flex;
       flex-direction: column;
@@ -9,18 +10,47 @@
         font-size: 1.5rem;
         line-height: 2rem;
         text-align: left;
+        font-weight: 300;
         position: relative;
         padding: 3rem 1.5rem 19.375rem 0;
-        .second-step-select{
-          background-color: transparent;
+        display: flex;
+        .second-step-label-title{
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+        .select-heading{
+          display: inline-block;
           width: 18.5rem;
-          margin-left: 1.625rem;
-          padding: 0.5rem 8.75rem 0.5rem 1.125rem;
-          appearance: none;
-
+          margin-left: 1.5rem;
+          margin-right: 0;
+          .select-title {
+            border: 0.75px solid $color-dark-gray;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+          }
+            .select-title--title {
+              width: 50%;
+              &:before, &:after {
+                content: "mmn";
+                color: transparent;
+                font-size: 0.35rem;
+                width: 1rem;
+                height: 1rem;
+                border-top: 0.5px solid $color-black;
+                border-left: 1rem;
+              }
+            }
+          .select-down-arrow{
+            content: url("../../assets/Icon-Arrow-Down.svg");
+          }
+          .select-up-arrow{
+            content: url("../../assets/Icon-Arrow-Up.svg");
+          }
         }
       }
-
     }
   }
 

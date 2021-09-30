@@ -40,7 +40,7 @@ function ThingsFirstStep({thingsDonate, onDoneThings, onDoneStep}) {
         (number===3) && setThirdChoice(true);
         (number===4) && setFourthChoice(true);
         (number===5) && setFifthChoice(true);
-
+        setFailure(false);
     }
     return (
         <div className='container first-step-section'>

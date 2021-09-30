@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
     const [bags, setBags] = useState(numberBags);
     const [openCheckBox, setOpenCheckBox] = useState(false);
+    const [failure,setFailure] = useState(false);
 
     useEffect(() => {
             if (typeof onDoneBags === 'function'){
@@ -13,6 +14,8 @@ function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
         e.preventDefault();
             if (typeof onDoneStep === 'function' && bags>0){
                 onDoneStep(3);
+            } else {
+                setFailure(true);
             }
     }
     const handleOnClickBack = (e) => {
@@ -27,6 +30,7 @@ function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
     const handleOnClickOption = (number) => {
         setBags(number);
         setOpenCheckBox(prev => !prev);
+        setFailure(false);
     }
 
     return (
@@ -56,6 +60,7 @@ function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
                                 }
                             </div>
                         </div>
+                        { failure && <p className='step-failure'>Wybierz liczbę worków</p>}
                     </form>
                     <div className='step-change'>
                         <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>

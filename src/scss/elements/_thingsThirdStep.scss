@@ -78,6 +78,16 @@
       background-color: $color-yellow;
     }
   }
+  .step-failure--first{
+    position: absolute;
+    bottom: 14.75rem;
+    font-weight: 300;
+  }
+  .step-failure--organization{
+    position: absolute;
+    bottom: 6rem;
+    font-weight: 300;
+  }
   .third-step-input-text{
     background-color: transparent;
     width: 35.625rem;

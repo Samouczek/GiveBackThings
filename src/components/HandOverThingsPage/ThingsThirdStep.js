@@ -11,6 +11,8 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
     const [fifthCheckbox, setFifthCheckbox] = useState(false);
     const [openCheckBox, setOpenCheckBox] = useState(false);
     const [helpGroups, setHelpGroups] = useState(form.helpGroups);
+    const [failureFirst,setFailureFirst] = useState(false);
+    const [failureSecond,setFailureSecond] = useState(false);
 
     useEffect(() => {
         if (typeof onDoneLocalization=== 'function'){
@@ -24,18 +26,26 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
     },[localizationSpecific])
     useEffect(() => {
         setHelpGroups(CreateHelpGroups(firstCheckbox, secondCheckbox, thirdCheckbox, fourthCheckbox, fifthCheckbox));
+        console.log(helpGroups);
     },[firstCheckbox, secondCheckbox, thirdCheckbox, fourthCheckbox, fifthCheckbox])
 
     const handleOnClickNext = (e) => {
         e.preventDefault();
-        if(helpGroups.length>0 && (localization || localizationSpecific)) {
+        if (helpGroups.length > 0 && (localization || localizationSpecific)) {
             if (typeof onDoneStep === 'function') {
                 onDoneStep(4);
             }
-        }
-            if (typeof onDoneHelpGroups === 'function') {
+            if (typeof onDoneLocalizationSpecific === 'function' ) {
                 onDoneHelpGroups(helpGroups);
             }
+        } else {
+            if (helpGroups.length === 0) {
+                setFailureFirst(true);
+            }
+            if (!localization && !localizationSpecific) {
+                setFailureSecond(true);
+            }
+        }
     }
     const handleOnClickSelect = () => {
         setOpenCheckBox(prev => !prev);
@@ -43,6 +53,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
     const handleOnClickOption = (city) => {
         setLocalization(city);
         setOpenCheckBox(prev => !prev);
+        setFailureSecond(false);
     }
     const handleOnClickBack = (e) => {
         e.preventDefault();
@@ -65,6 +76,12 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                                     <div className="select-up-arrow"> </div> : <div className="select-down-arrow"> </div>
                                 }
                             </div>
+                            {
+                                failureSecond &&
+                                <p className='step-failure step-failure--localization'>
+                                    Wybierz lokalizację lub organizację
+                                </p>
+                            }
                         </div>
                         <h3 className='step-form-subtitle'>Komu chcesz pomóc?</h3>
                         <div className='third-step-checkboxes'>
@@ -114,12 +131,22 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                                 osobom starszym
                             </label>
                         </div>
+                        {
+                            failureFirst && <p className='step-failure step-failure--first'>
+                            Wybierz minimum jedną grupę potrzebujących
+                        </p>
+                        }
                        <h3 className='step-form-subtitle'>Wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
                         <input
                             className='third-step-input-text'
                             type="text"
                             onChange={ e => setLocalizationSpecific(e.target.value)}
                         />
+                        {
+                            failureSecond &&
+                            <p className='step-failure step-failure--organization'>
+                                Wybierz lokalizację lub organizację
+                            </p>}
                         {openCheckBox &&
                         <ul className='select-options'>
                             <li

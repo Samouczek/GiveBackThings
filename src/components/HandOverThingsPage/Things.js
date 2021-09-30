@@ -55,7 +55,7 @@ function Things() {
         dataForm.date = date;
         dataForm.time=time;
         dataForm.note = note;
-
+        console.log(dataForm);
     }
     console.log(dataForm);
     return (

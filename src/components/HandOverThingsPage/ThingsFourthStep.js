@@ -1,4 +1,11 @@
 import React, {useEffect, useState} from "react";
+import {
+    cityValidation,
+    dateValidation,
+    phoneValidation,
+    postCodeValidation,
+    streetValidation, timeValidation
+} from "../../logic/ThingsFormValidation";
 
 function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
     const [street, setStreet] = useState(form.street);
@@ -10,7 +17,9 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
     const [note, setNote] = useState(form.note);
 
     useEffect(() => {
-        if (typeof onDoneStepFourth === 'function'){
+        if (typeof onDoneStepFourth === 'function' && !streetValidation(street) &&  !cityValidation(city)
+            && !postCodeValidation(postalCode) && !phoneValidation(phone) && !dateValidation(date)
+            && !timeValidation(time)){
            onDoneStepFourth(street,city,postalCode,phone,date,time,note);
         }
     },[city,street,postalCode,phone,date,time,note])
@@ -61,7 +70,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     className='fourth-step-input'
                                     type="text"
                                     placeholder=' 00-000'
-                                    onChange={ e => setPostalCode(e.target.value)}
+                                    onChange={ e =>  setPostalCode(e.target.value)}
                                 />
                             </label>
                             <label className='fourth-step-label'>

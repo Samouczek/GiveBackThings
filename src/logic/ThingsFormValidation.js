@@ -12,7 +12,7 @@ export const postCodeValidation = (postCode) => {
     return !pl.test(postCode);
 }
 
-export const phoneCodeValidation = (phone) => {
+export const phoneValidation = (phone) => {
     const number = /\(?([0-9]{3})\)?([ ]?)([0-9]{3})\2([0-9]{3})/;
     return !number.test(phone);
 }

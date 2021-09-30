@@ -8,6 +8,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
     const [thirdCheckbox, setThirdCheckbox] = useState(false);
     const [fourthCheckbox, setFourthCheckbox] = useState(false);
     const [fifthCheckbox, setFifthCheckbox] = useState(false);
+    const [openCheckBox, setOpenCheckBox] = useState(false);
     const helpGroups = [];
 
 
@@ -38,6 +39,13 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
             onDoneHelpGroups(helpGroups);
         }
     }
+    const handleOnClickSelect = () => {
+        setOpenCheckBox(prev => !prev);
+    }
+    const handleOnClickOption = (city) => {
+        setLocalization(city);
+        setOpenCheckBox(prev => !prev);
+    }
 
     const handleOnClickBack = (e) => {
         e.preventDefault();
@@ -53,17 +61,48 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                     <div className='number-step'>Krok 3/4</div>
                     <form className='third-step-form'>
                         <h2 className='step-form-title'>Lokalizacja:</h2>
-                            <select
-                                className='second-step-select'
-                                value={localization}
-                                onChange={e => setLocalization(e.target.value)}
-                            >
-                                <option value="Poznań">Poznań</option>
-                                <option value="Warszawa">Warszawa</option>
-                                <option value="Kraków">Kraków</option>
-                                <option value="Wrocław">Wrocław</option>
-                                <option value="Katowice">Katowice</option>
-                            </select>
+                        <div className="select-heading">
+                            <div className="select-title" onClick={handleOnClickSelect}>
+                                <div className="select-title--title"> wybierz </div>
+                                {openCheckBox ?
+                                    <div className="select-up-arrow"> </div> : <div className="select-down-arrow"> </div>
+                                }
+                            </div>
+                            {openCheckBox &&
+                            <ul className='select-options'>
+                                <li
+                                    className="select-option"
+                                    onClick={(number)=>handleOnClickOption("Poznań")}
+                                >
+                                    Poznań
+                                </li>
+                                <li
+                                    className="select-option"
+                                    onClick={(number)=>handleOnClickOption("Warszawa")}
+                                >
+                                    Warszawa
+                                </li>
+                                <li
+                                    className="select-option"
+                                    onClick={(number)=>handleOnClickOption("Kraków")}
+                                >
+                                    Kraków
+                                </li>
+                                <li
+                                    className="select-option"
+                                    onClick={(number)=>handleOnClickOption("Wrocław")}
+                                >
+                                    Wrocław
+                                </li>
+                                <li
+                                    className="select-option"
+                                    onClick={(number)=>handleOnClickOption("Katowice")}
+                                >
+                                    Katowice
+                                </li>
+                            </ul>
+                            }
+                        </div>
                         <h3 className='step-form-subtitle'>Komu chcesz pomóc?</h3>
                         <div className='third-step-checkboxes'>
                             <label className = {`third-step-label ${firstCheckbox ? "active-checked" : ""}`}>

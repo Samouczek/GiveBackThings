@@ -40,7 +40,7 @@ function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
                                         <div className="select-up-arrow"> </div> : <div className="select-down-arrow"> </div>
                                     }
                                 </div>
-                                <ul>
+                                <ul className='select-options'>
                                     <li className="select-option">1</li>
                                     <li className="select-option">2</li>
                                     <li className="select-option">3</li>

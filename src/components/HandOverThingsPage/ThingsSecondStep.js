@@ -11,7 +11,7 @@ function ThingsSecondStep({numberBags,onDoneBags,onDoneStep}) {
     })
     const handleOnClickNext = (e) => {
         e.preventDefault();
-            if (typeof onDoneStep === 'function'){
+            if (typeof onDoneStep === 'function' && bags>0){
                 onDoneStep(3);
             }
     }

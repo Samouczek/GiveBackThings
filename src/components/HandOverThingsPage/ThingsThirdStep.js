@@ -10,7 +10,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
     const [fourthCheckbox, setFourthCheckbox] = useState(false);
     const [fifthCheckbox, setFifthCheckbox] = useState(false);
     const [openCheckBox, setOpenCheckBox] = useState(false);
-    const [helpGroups, setHelpGroups] = useState([]);
+    const [helpGroups, setHelpGroups] = useState(form.helpGroups);
 
     useEffect(() => {
         if (typeof onDoneLocalization=== 'function'){

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import CreateHelpGroups from "../../logic/CreateHelpGroups";
 
 function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocalizationSpecific,onDoneStep}) {
     const [localization, setLocalization] = useState(form.localization);
@@ -9,35 +10,32 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
     const [fourthCheckbox, setFourthCheckbox] = useState(false);
     const [fifthCheckbox, setFifthCheckbox] = useState(false);
     const [openCheckBox, setOpenCheckBox] = useState(false);
-    const helpGroups = [];
-
+    const [helpGroups, setHelpGroups] = useState([]);
 
     useEffect(() => {
         if (typeof onDoneLocalization=== 'function'){
             onDoneLocalization(localization);
         }
     },[localization])
-
     useEffect(() => {
         if (typeof onDoneLocalizationSpecific=== 'function'){
             onDoneLocalizationSpecific(localizationSpecific);
         }
     },[localizationSpecific])
+    useEffect(() => {
+        setHelpGroups(CreateHelpGroups(firstCheckbox, secondCheckbox, thirdCheckbox, fourthCheckbox, fifthCheckbox));
+    },[firstCheckbox, secondCheckbox, thirdCheckbox, fourthCheckbox, fifthCheckbox])
 
     const handleOnClickNext = (e) => {
         e.preventDefault();
-        if (typeof onDoneStep === 'function'){
-            onDoneStep(4);
+        if(helpGroups.length>0 && (localization || localizationSpecific)) {
+            if (typeof onDoneStep === 'function') {
+                onDoneStep(4);
+            }
         }
-        firstCheckbox && helpGroups.push("dzieciom");
-        secondCheckbox && helpGroups.push("samotnym matkom");
-        thirdCheckbox && helpGroups.push("bezdomnym");
-        fourthCheckbox && helpGroups.push("niepełnosprawnym");
-        fifthCheckbox && helpGroups.push("osobom starszym");
-        if (typeof onDoneHelpGroups === 'function'){
-            console.log(helpGroups);
-            onDoneHelpGroups(helpGroups);
-        }
+            if (typeof onDoneHelpGroups === 'function') {
+                onDoneHelpGroups(helpGroups);
+            }
     }
     const handleOnClickSelect = () => {
         setOpenCheckBox(prev => !prev);
@@ -46,7 +44,6 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
         setLocalization(city);
         setOpenCheckBox(prev => !prev);
     }
-
     const handleOnClickBack = (e) => {
         e.preventDefault();
         if (typeof onDoneStep === 'function'){

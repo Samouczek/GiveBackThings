@@ -9,4 +9,4 @@ function CreateHelpGroups(firstCheckbox, secondCheckbox,thirdCheckbox, fourthChe
     return helpGroups;
 }
 
-export default CreateHelpGroups; 
+export default CreateHelpGroups;

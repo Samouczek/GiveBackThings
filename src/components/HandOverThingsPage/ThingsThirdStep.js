@@ -68,40 +68,6 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                                     <div className="select-up-arrow"> </div> : <div className="select-down-arrow"> </div>
                                 }
                             </div>
-                            {openCheckBox &&
-                            <ul className='select-options'>
-                                <li
-                                    className="select-option"
-                                    onClick={(number)=>handleOnClickOption("Poznań")}
-                                >
-                                    Poznań
-                                </li>
-                                <li
-                                    className="select-option"
-                                    onClick={(number)=>handleOnClickOption("Warszawa")}
-                                >
-                                    Warszawa
-                                </li>
-                                <li
-                                    className="select-option"
-                                    onClick={(number)=>handleOnClickOption("Kraków")}
-                                >
-                                    Kraków
-                                </li>
-                                <li
-                                    className="select-option"
-                                    onClick={(number)=>handleOnClickOption("Wrocław")}
-                                >
-                                    Wrocław
-                                </li>
-                                <li
-                                    className="select-option"
-                                    onClick={(number)=>handleOnClickOption("Katowice")}
-                                >
-                                    Katowice
-                                </li>
-                            </ul>
-                            }
                         </div>
                         <h3 className='step-form-subtitle'>Komu chcesz pomóc?</h3>
                         <div className='third-step-checkboxes'>
@@ -157,6 +123,40 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                             type="text"
                             onChange={ e => setLocalizationSpecific(e.target.value)}
                         />
+                        {openCheckBox &&
+                        <ul className='select-options'>
+                            <li
+                                className="select-option"
+                                onClick={(city)=>handleOnClickOption("Poznań")}
+                            >
+                                Poznań
+                            </li>
+                            <li
+                                className="select-option"
+                                onClick={(city)=>handleOnClickOption("Warszawa")}
+                            >
+                                Warszawa
+                            </li>
+                            <li
+                                className="select-option"
+                                onClick={(city)=>handleOnClickOption("Kraków")}
+                            >
+                                Kraków
+                            </li>
+                            <li
+                                className="select-option"
+                                onClick={(city)=>handleOnClickOption("Wrocław")}
+                            >
+                                Wrocław
+                            </li>
+                            <li
+                                className="select-option"
+                                onClick={(city)=>handleOnClickOption("Katowice")}
+                            >
+                                Katowice
+                            </li>
+                        </ul>
+                        }
                     </form>
                     <div className='step-change'>
                         <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>

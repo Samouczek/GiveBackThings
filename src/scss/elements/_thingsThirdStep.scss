@@ -1,14 +1,60 @@
 
 .third-step-form{
   color: $color-black;
-  .second-step-select{
-    background-color: transparent;
-    width: 18.75rem;
-    padding: 0.5rem 8.75rem 0.5rem 1.125rem;
+  position: relative;
+  .select-heading{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: left;
+    font-weight: 300;
+    width: 18.5rem;
+    display: flex;
+    flex-direction: column;
     margin-top: 1.25rem;
     margin-bottom: 3.125rem;
+    .select-title {
+      border: 0.75px solid $color-dark-gray;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    .select-title--title {
+      width: 50%;
+      &:before, &:after {
+        content: "mmn";
+        color: transparent;
+        font-size: 0.35rem;
+        width: 1rem;
+        height: 1rem;
+        border-top: 0.5px solid $color-black;
+        border-left: 1rem;
+      }
+    }
+    .select-down-arrow{
+      content: url("../../assets/Icon-Arrow-Down.svg");
+    }
+    .select-up-arrow{
+      content: url("../../assets/Icon-Arrow-Up.svg");
+    }
   }
-
+  .select-options {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-align: left;
+    font-weight: 300;
+    width: 18.5rem;
+    border: 0.75px solid $color-dark-gray;
+    margin-top: 1rem;
+    padding: 0.5rem 0 0.5rem 1rem;
+    position: absolute;
+    left: 0;
+    top: 8rem;
+    z-index: 1;
+    background-image: url("../../assets/Background-Form.jpg");
+    background-position: 30%;
+  }
   .third-step-checkboxes{
     padding-top: 1.25rem;
     padding-bottom: 2.375rem;
@@ -16,6 +62,7 @@
     flex-wrap: wrap;
     .third-step-label{
       font-size: 1.5rem;
+      font-weight: 300;
       font-width: 300;
       line-height: 2rem;
       margin: 0.75rem 0.75rem 0.75rem 0;
@@ -31,7 +78,6 @@
       background-color: $color-yellow;
     }
   }
-
   .third-step-input-text{
     background-color: transparent;
     width: 35.625rem;

@@ -37,6 +37,11 @@
   font-weight: 600;
 }
 
+.step-failure{
+  color: $color-failure;
+  font-size: 1rem;
+}
+
 @media (min-width: $breakpoint-lg) {
   .background-step{
     padding-left: 8.875rem;

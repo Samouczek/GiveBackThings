@@ -7,6 +7,7 @@ function ThingsFirstStep({thingsDonate, onDoneThings, onDoneStep}) {
     const [thirdChoice, setThirdChoice] = useState(false);
     const [fourthChoice, setFourthChoice] = useState(false);
     const [fifthChoice, setFifthChoice] = useState(false);
+    const [failure,setFailure] = useState(false);
 
     useEffect(() => {
        if (things !== false) {
@@ -22,6 +23,8 @@ function ThingsFirstStep({thingsDonate, onDoneThings, onDoneStep}) {
            if (typeof onDoneStep === 'function'){
                 onDoneStep(2);
            }
+       } else {
+               setFailure(true);
        }
     }
 
@@ -37,6 +40,7 @@ function ThingsFirstStep({thingsDonate, onDoneThings, onDoneStep}) {
         (number===3) && setThirdChoice(true);
         (number===4) && setFourthChoice(true);
         (number===5) && setFifthChoice(true);
+
     }
     return (
         <div className='container first-step-section'>
@@ -110,6 +114,7 @@ function ThingsFirstStep({thingsDonate, onDoneThings, onDoneStep}) {
                             />
                             inne
                         </label>
+                        { failure && <p className='step-failure'>Wybierz rzeczy, które chcesz oddać</p>}
                     </form>
                     <div className='step-change'>
                         <button className='btn-step btn-next' onClick={handleOnClick}>Dalej</button>

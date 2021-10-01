@@ -15,6 +15,7 @@ nav{
   letter-spacing: 0;
   color: $color-gray;
   opacity: 1;
+  border: 0.75px solid transparent;
   &:hover, &:active, &:focus{
     border: 0.75px solid $color-yellow;
     cursor: pointer;
@@ -44,6 +45,7 @@ nav{
     line-height: 1.5rem;
     letter-spacing: 0px;
     opacity: 1;
+    border: 0.75px solid transparent;
     &:hover, &:focus{
       border: 0.75px solid $color-dark-gray;
       cursor: pointer;

@@ -11,7 +11,7 @@ function Home({email}) {
     const [userEmail, setUserEmail] = useState(email);
     return (
       <>
-          <HomeHeader />
+          <HomeHeader userEmail={email}/>
           <HomeThreeColumns />
           <HomeSimpleSteps />
           <HomeAboutUs />

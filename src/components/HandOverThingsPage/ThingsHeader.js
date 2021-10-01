@@ -1,13 +1,13 @@
 import Navigation from "../Navigation";
 
-function ThingsHeader() {
+function ThingsHeader({userEmail}) {
     return (
         <div className='container '>
             <div className='row things_header'>
                 <div className='col-lg-6 image-things-header'>
                 </div>
                 <div className='col-lg-6 col-sm-12 right-header'>
-                    <Navigation />
+                    <Navigation email={userEmail}/>
                         <h1>
                             Oddaj rzeczy, których już nie chcesz <br />
                             POTRZEBUJĄCYM

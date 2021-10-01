@@ -4,7 +4,7 @@ import {LOG_IN} from "../../constants/Route";
 import Login from "../loginPage/Login";
 import * as Scroll from "react-scroll";
 
-export default function HomeHeader() {
+export default function HomeHeader({userEmail}) {
     let Element = Scroll.Element;
     return (
         <Element name="headerElement">
@@ -13,7 +13,7 @@ export default function HomeHeader() {
                     <div className='col-lg-6 image-header'>
                     </div>
                     <div className='col-lg-6 col-sm-12 right-header'>
-                        <Navigation />
+                        <Navigation email={userEmail}/>
                         <h1>
                             Zacznij pomagać! <br />
                             Oddaj niechciane rzeczy w zaufane ręce

@@ -26,7 +26,7 @@ const dataForm = {
     note: false
 }
 
-function Things() {
+function Things({email}) {
     const [step,setStep] = useState(1);
 
     const handleStepDone = (stepNumber) => {
@@ -60,7 +60,7 @@ function Things() {
     console.log(dataForm);
     return (
         <>
-            <ThingsHeader />
+            <ThingsHeader userEmail={email}/>
             {step === 1 && <ThingsImportantNotice notice={STEP_1} />}
             {step === 2 && <ThingsImportantNotice notice={STEP_2} />}
             {step === 3 && <ThingsImportantNotice notice={STEP_3} />}

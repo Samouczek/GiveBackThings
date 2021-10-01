@@ -20,7 +20,9 @@ function App() {
           <Route exact path={HOME} >
             <Home email={userEmail}/>
           </Route>
-            <Route exact path={HAND_OVER_THINGS} component={Things}/>
+          <Route exact path={HAND_OVER_THINGS} >
+            <Things email={userEmail}/>
+          </Route>
             <Route exact path={LOG_IN}>
               <Login login={userLogin} />
             </Route>

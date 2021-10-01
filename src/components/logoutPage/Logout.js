@@ -1,8 +1,13 @@
 import Navigation from "../Navigation";
 import {Link} from "react-router-dom";
 import {HOME, REGISTRATION} from "../../constants/Route";
+import {useEffect, useState} from "react";
 
-function Logout() {
+function Logout({logout}) {
+    const[email,setemail] = useState(false);
+    useEffect(()=> {
+        logout(email)
+    },[]);
     return (
         <div className='container logout-section'>
             <div className='row'>

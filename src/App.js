@@ -26,7 +26,9 @@ function App() {
             <Route exact path={LOG_IN}>
               <Login login={userLogin} />
             </Route>
-            <Route exact path={LOG_OUT} component={Logout}/>
+          <Route exact path={LOG_OUT} >
+            <Logout logout={userLogin}/>
+          </Route>
           <Route exact path={REGISTRATION} >
             <Registration login={userLogin}/>
           </Route>

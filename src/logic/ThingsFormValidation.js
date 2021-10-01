@@ -1,10 +1,10 @@
 
 export const streetValidation = (street) => {
-    return street.length < 2;
+    return street.length < 2 || !street;
 }
 
 export const cityValidation = (city) => {
-    return city.length < 2;
+    return city.length < 2 || !city;
 }
 
 export const postCodeValidation = (postCode) => {

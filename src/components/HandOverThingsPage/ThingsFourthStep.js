@@ -15,7 +15,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
     const [date, setDate] = useState(form.date);
     const [time, setTime] = useState(form.time);
     const [note, setNote] = useState(form.note);
-    const [failureStreet,setFailureStreet] = useState(true);
+    const [failureStreet,setFailureStreet] = useState(false);
     const [failureCity,setFailureCity] = useState(false);
     const [failurePostCode,setFailurePostCode] = useState(false);
     const [failurePhone,setFailurePhone] = useState(false);
@@ -28,12 +28,28 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
             && !timeValidation(time)){
            onDoneStepFourth(street,city,postalCode,phone,date,time,note);
         }
+        !streetValidation(street) && setFailureStreet(false);
+        !cityValidation(city) && setFailureCity(false);
+        !postCodeValidation(postalCode) && setFailurePostCode(false);
+        !phoneValidation(phone) && setFailurePhone(false);
+        !dateValidation(date) && setFailureDate(false);
+        !timeValidation(time) && setFailureTime(false);
     },[city,street,postalCode,phone,date,time,note])
 
     const handleOnClickNext = (e) => {
-        e.preventDefault();
-        if (typeof onDoneStep === 'function'){
-            onDoneStep(5);
+        if ( !streetValidation(street) &&  !cityValidation(city) && !postCodeValidation(postalCode)
+            && !phoneValidation(phone) && !dateValidation(date) && !timeValidation(time)) {
+            e.preventDefault();
+            if (typeof onDoneStep === 'function') {
+                onDoneStep(5);
+            }
+        } else {
+            streetValidation(street) && setFailureStreet(true);
+            cityValidation(city) && setFailureCity(true);
+            postCodeValidation(postalCode) && setFailurePostCode(true);
+            phoneValidation(phone) && setFailurePhone(true);
+            dateValidation(date) && setFailureDate(true);
+            timeValidation(time) && setFailureTime(true);
         }
     }
     const handleOnClickBack = (e) => {
@@ -70,7 +86,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' Kraków'
                                     onChange={ e => setCity(e.target.value)}
                                 />
-                                { failureStreet && <p className='step-failure'>Podana nazwa miasta jest za krótka</p>}
+                                { failureCity && <p className='step-failure'>Podana nazwa miasta jest za krótka</p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Kod <br />pocztowy
@@ -80,7 +96,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 00-000'
                                     onChange={ e =>  setPostalCode(e.target.value)}
                                 />
-                                { failureStreet &&
+                                { failurePostCode &&
                                 <p className='step-failure step-failure--post-code'>
                                     Podaj poprawny kod pocztowy np. 00-000
                                 </p>}
@@ -93,7 +109,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 500 000 000'
                                     onChange={ e => setPhone(e.target.value)}
                                 />
-                                { failureStreet &&
+                                { failurePhone &&
                                 <p className='step-failure step-failure--phone'>
                                     Podaj prawidłwy 9-cyfrowy numer telefonu
                                 </p>}
@@ -109,7 +125,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 2020/10/01'
                                     onChange={ e => setDate(e.target.value)}
                                 />
-                                { failureStreet && <p className='step-failure'>Podaj poprawną datą np. 2021/10/01</p>}
+                                { failureDate && <p className='step-failure'>Podaj poprawną datą np. 2021/10/01</p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Godzina
@@ -119,7 +135,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 13:30'
                                     onChange={ e => setTime(e.target.value)}
                                 />
-                                { failureStreet && <p className='step-failure'>Podaj poprawną godzinę np. 13:30</p>}
+                                { failureTime && <p className='step-failure'>Podaj poprawną godzinę np. 13:30</p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Uwagi <br />do kuriera

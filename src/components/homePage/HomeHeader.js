@@ -1,6 +1,6 @@
 import Navigation from "../Navigation";
 import {Link} from "react-router-dom";
-import {LOG_IN} from "../../constants/Route";
+import {HAND_OVER_THINGS, LOG_IN} from "../../constants/Route";
 import Login from "../loginPage/Login";
 import * as Scroll from "react-scroll";
 
@@ -22,7 +22,8 @@ export default function HomeHeader({userEmail}) {
                         </div>
                         <div className='btns-header'>
                             <button className='btn-home btn-home_header'>
-                                <Link to={LOG_IN} >oddaj rzeczy</Link>
+                                {userEmail ? <Link to={HAND_OVER_THINGS} >oddaj rzeczy</Link>
+                                    : <Link to={LOG_IN} >oddaj rzeczy</Link>}
                             </button>
                             <button className='btn-home btn-home_header'>
                                 <Link to={LOG_IN} >zorganizuj zbiórkę</Link>

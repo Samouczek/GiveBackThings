@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import CreateHelpGroups from "../../logic/CreateHelpGroups";
+import {streetValidation} from "../../logic/ThingsFormValidation";
 
 function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocalizationSpecific,onDoneStep}) {
     const [localization, setLocalization] = useState(form.localization);
@@ -26,6 +27,11 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
     },[localizationSpecific])
     useEffect(() => {
         setHelpGroups(CreateHelpGroups(firstCheckbox, secondCheckbox, thirdCheckbox, fourthCheckbox, fifthCheckbox));
+        firstCheckbox && setFailureFirst(false);
+        secondCheckbox && setFailureFirst(false);
+        thirdCheckbox && setFailureFirst(false);
+        fourthCheckbox && setFailureFirst(false);
+        fifthCheckbox && setFailureFirst(false);
         console.log(helpGroups);
     },[firstCheckbox, secondCheckbox, thirdCheckbox, fourthCheckbox, fifthCheckbox])
 

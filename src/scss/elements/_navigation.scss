@@ -19,8 +19,14 @@ nav{
     border: 0.75px solid $color-yellow;
     cursor: pointer;
   }
-  &--email,&--give{
+  &--give{
     color: $color-black;
+  }
+  &--email{
+    color: $color-black;
+    &:hover, &:active, &:focus{
+      border: none;
+    }
   }
 }
 

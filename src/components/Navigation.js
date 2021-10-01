@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 import * as Scroll from 'react-scroll';
 import {LOG_IN, REGISTRATION} from "../constants/Route";
 
-export default function Navigation() {
+export default function Navigation({email}) {
     let LinkScroll = Scroll.Link;
     return (
         <nav>

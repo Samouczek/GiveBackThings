@@ -1,10 +1,10 @@
 import Navigation from "../Navigation";
 import {Link} from "react-router-dom";
-import {REGISTRATION} from "../../constants/Route";
+import {HOME, REGISTRATION} from "../../constants/Route";
 import {useState} from "react";
 import {passwordValidation, emailValidation} from "../../logic/LoginValidation";
 
-function Login() {
+function Login({login}) {
     const [email, setEmail] = useState(false);
     const [password, setPassword] = useState(false);
     const [emailIncorrect, setEmailIncorrect] = useState(false);
@@ -16,6 +16,7 @@ function Login() {
         setPasswordIncorrect(passwordValidation(password));
         setEmailIncorrect(emailValidation(email));
         if (!passwordValidation(password) && !emailValidation(email)){
+            login(email);
             setSuccess(true);
         }
     }
@@ -25,7 +26,7 @@ function Login() {
                 <div className='col-lg-6 left-empty'>
                 </div>
                 <div className='col-lg-6 col-sm-12 right-nav'>
-                    <Navigation />
+                    <Navigation email={email}/>
                 </div>
             </div>
             <div className='login'>
@@ -65,7 +66,9 @@ function Login() {
                     </div>
                     <div className='btn login__btn'>
                         <button className='left-btn'><Link to={REGISTRATION} >Załóż konto</Link></button>
-                        <input type="submit" value='Zaloguj się' className="btn right-btn" onClick={handleOnClick}/>
+                        <button className="btn right-btn" onClick={handleOnClick}>
+                            {email ? <Link to={HOME} >Zaloguj się</Link> : 'Zaloguj się'}
+                        </button>
                     </div>
                 </form>
             </div>

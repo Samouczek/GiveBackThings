@@ -5,15 +5,23 @@ import Things from "./components/HandOverThingsPage/Things";
 import Login from "./components/loginPage/Login";
 import Logout from "./components/logoutPage/Logout";
 import Registration from "./components/registrationPage/Registration";
+import {useState} from "react";
 
 function App() {
+  const [userEmail, setUserEmail] = useState(false);
+
+  const userLogin = (email) => {
+    setUserEmail(email)
+  }
   return (
     <>
       <BrowserRouter>
         <Switch>
           <Route exact path={HOME} component={Home} />
             <Route exact path={HAND_OVER_THINGS} component={Things}/>
-            <Route exact path={LOG_IN} component={Login}/>
+            <Route exact path={LOG_IN}>
+              <Login login={userLogin} />
+            </Route>
             <Route exact path={LOG_OUT} component={Logout}/>
             <Route exact path={REGISTRATION} component={Registration}/>
         </Switch>

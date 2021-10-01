@@ -1,16 +1,25 @@
 import {Link} from "react-router-dom";
 import * as Scroll from 'react-scroll';
 import {LOG_IN, REGISTRATION} from "../constants/Route";
+import {useState} from "react";
 
 export default function Navigation({email}) {
+    const [emailLogin, setEmailLogin] = useState(email);
+    console.log(emailLogin);
+
     let LinkScroll = Scroll.Link;
     return (
         <nav>
             {/*<input type="checkbox" id="menu" className="menu-btn"/>*/}
             {/*<label htmlFor="menu" className="menu-icon"><i className="fas fa-bars"></i></label>*/}
             <ul className='topMenu'>
-                <li className='topMenu-item'><Link to={LOG_IN} >Zaloguj</Link></li>
-                <li className='topMenu-item'><Link to={REGISTRATION} >Załóż konto</Link></li>
+                {emailLogin && <li className='topMenu-item topMenu-item--email'>{emailLogin}</li>}
+                <li className = {emailLogin ? 'topMenu-item topMenu-item--give' : "topMenu-item "}>
+                    {emailLogin  ? 'Oddaj rzeczy' : <Link to={LOG_IN} >Zaloguj</Link>}
+                </li>
+                <li className='topMenu-item'>
+                    {emailLogin  ? 'Wyloguj' :<Link to={REGISTRATION} >Załóż konto</Link>}
+                </li>
             </ul>
             <ul className='bottomMenu'>
                 <li className='bottomMenu-item'>

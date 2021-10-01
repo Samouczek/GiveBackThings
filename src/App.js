@@ -17,13 +17,17 @@ function App() {
     <>
       <BrowserRouter>
         <Switch>
-          <Route exact path={HOME} component={Home} />
+          <Route exact path={HOME} >
+            <Home email={userEmail}/>
+          </Route>
             <Route exact path={HAND_OVER_THINGS} component={Things}/>
             <Route exact path={LOG_IN}>
               <Login login={userLogin} />
             </Route>
             <Route exact path={LOG_OUT} component={Logout}/>
-            <Route exact path={REGISTRATION} component={Registration}/>
+          <Route exact path={REGISTRATION} >
+            <Registration login={userLogin}/>
+          </Route>
         </Switch>
       </BrowserRouter>
     </>

@@ -19,6 +19,9 @@ nav{
     border: 0.75px solid $color-yellow;
     cursor: pointer;
   }
+  &--email,&--give{
+    color: $color-black;
+  }
 }
 
 

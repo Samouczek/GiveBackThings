@@ -6,6 +6,7 @@ import {passwordValidation, emailValidation} from "../../logic/LoginValidation";
 
 function Login({login}) {
     const [email, setEmail] = useState(false);
+    const [correctEmail, setCorrectEmail] = useState(false);
     const [password, setPassword] = useState(false);
     const [emailIncorrect, setEmailIncorrect] = useState(false);
     const [passwordIncorrect, setPasswordIncorrect] = useState(false);
@@ -18,6 +19,7 @@ function Login({login}) {
         if (!passwordValidation(password) && !emailValidation(email)){
             login(email);
             setSuccess(true);
+            setCorrectEmail(email);
         }
     }
     return (
@@ -26,7 +28,7 @@ function Login({login}) {
                 <div className='col-lg-6 left-empty'>
                 </div>
                 <div className='col-lg-6 col-sm-12 right-nav'>
-                    <Navigation email={email}/>
+                    <Navigation email={correctEmail}/>
                 </div>
             </div>
             <div className='login'>

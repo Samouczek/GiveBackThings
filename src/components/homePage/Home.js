@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import HomeHeader from "./HomeHeader";
 import HomeThreeColumns from "./HomeThreeColumns";
 import HomeSimpleSteps from "./HomeSimpleSteps";
@@ -7,7 +7,8 @@ import HomeWhoWeHelp from "./HomeWhoWeHelp";
 import HomeContactUs from "./HomeContactUs";
 import Footer from "../Footer";
 
-function Home() {
+function Home({email}) {
+    const [userEmail, setUserEmail] = useState(email);
     return (
       <>
           <HomeHeader />

@@ -8,7 +8,7 @@ function Logout() {
             <div className='row'>
                 <div className='col-lg-6 left-empty'> </div>
                 <div className='col-lg-6 col-sm-12 right-nav'>
-                    <Navigation />
+                    <Navigation email={false}/>
                 </div>
             </div>
             <div className='logout'>

@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import * as Scroll from 'react-scroll';
-import {HAND_OVER_THINGS, LOG_IN, REGISTRATION} from "../constants/Route";
+import {HAND_OVER_THINGS, LOG_IN, LOG_OUT, REGISTRATION} from "../constants/Route";
 import {useState} from "react";
 
 export default function Navigation({email}) {
@@ -21,7 +21,7 @@ export default function Navigation({email}) {
 
                 </li>
                 <li className='topMenu-item'>
-                    {emailLogin  ? 'Wyloguj' :<Link to={REGISTRATION} >Załóż konto</Link>}
+                    {emailLogin  ? <Link to={LOG_OUT} >Wyloguj</Link> :<Link to={REGISTRATION} >Załóż konto</Link>}
                 </li>
             </ul>
             <ul className='bottomMenu'>

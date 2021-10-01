@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import CreateHelpGroups from "../../logic/CreateHelpGroups";
-import {streetValidation} from "../../logic/ThingsFormValidation";
 
 function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocalizationSpecific,onDoneStep}) {
     const [localization, setLocalization] = useState(form.localization);
@@ -157,31 +156,31 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                         <ul className='select-options'>
                             <li
                                 className="select-option"
-                                onClick={(city)=>handleOnClickOption("Poznań")}
+                                onClick={()=>handleOnClickOption("Poznań")}
                             >
                                 Poznań
                             </li>
                             <li
                                 className="select-option"
-                                onClick={(city)=>handleOnClickOption("Warszawa")}
+                                onClick={()=>handleOnClickOption("Warszawa")}
                             >
                                 Warszawa
                             </li>
                             <li
                                 className="select-option"
-                                onClick={(city)=>handleOnClickOption("Kraków")}
+                                onClick={()=>handleOnClickOption("Kraków")}
                             >
                                 Kraków
                             </li>
                             <li
                                 className="select-option"
-                                onClick={(city)=>handleOnClickOption("Wrocław")}
+                                onClick={()=>handleOnClickOption("Wrocław")}
                             >
                                 Wrocław
                             </li>
                             <li
                                 className="select-option"
-                                onClick={(city)=>handleOnClickOption("Katowice")}
+                                onClick={()=>handleOnClickOption("Katowice")}
                             >
                                 Katowice
                             </li>
@@ -190,7 +189,7 @@ function ThingsThirdStep({form,onDoneHelpGroups,onDoneLocalization,onDoneLocaliz
                     </form>
                     <div className='step-change'>
                         <button className='btn-step btn-next' onClick={handleOnClickBack}>Wstecz</button>
-                        <button className='btn-step btn-next'onClick={handleOnClickNext}>Dalej</button>
+                        <button className='btn-step btn-next' onClick={handleOnClickNext}>Dalej</button>
                     </div>
                 </div>
                 <div  className='first-step-right col-lg-6 col-sm-12'>

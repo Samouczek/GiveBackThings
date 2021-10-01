@@ -34,6 +34,19 @@
           color: $color-gray;
         }
       }
+      .step-failure{
+        padding-left: 8.5rem;
+        font-size: 0.75rem;
+        font-weight: 300;
+        &--phone{
+          position: absolute;
+          bottom: 1rem;
+        }
+        &--post-code{
+          position: absolute;
+          bottom: 1rem;
+        }
+      }
       .comments-courier{
         height: 7.5rem;
       }

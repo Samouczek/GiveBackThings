@@ -15,6 +15,12 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
     const [date, setDate] = useState(form.date);
     const [time, setTime] = useState(form.time);
     const [note, setNote] = useState(form.note);
+    const [failureStreet,setFailureStreet] = useState(true);
+    const [failureCity,setFailureCity] = useState(false);
+    const [failurePostCode,setFailurePostCode] = useState(false);
+    const [failurePhone,setFailurePhone] = useState(false);
+    const [failureDate,setFailureDate] = useState(false);
+    const [failureTime,setFailureTime] = useState(false);
 
     useEffect(() => {
         if (typeof onDoneStepFourth === 'function' && !streetValidation(street) &&  !cityValidation(city)
@@ -54,6 +60,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' ul. Poznańska 1'
                                     onChange={ e => setStreet(e.target.value)}
                                 />
+                                { failureStreet && <p className='step-failure'>Podana nazwa ulicy jest za krótka</p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Miasto
@@ -63,6 +70,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' Kraków'
                                     onChange={ e => setCity(e.target.value)}
                                 />
+                                { failureStreet && <p className='step-failure'>Podana nazwa miasta jest za krótka</p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Kod <br />pocztowy
@@ -72,6 +80,10 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 00-000'
                                     onChange={ e =>  setPostalCode(e.target.value)}
                                 />
+                                { failureStreet &&
+                                <p className='step-failure step-failure--post-code'>
+                                    Podaj poprawny kod pocztowy np. 00-000
+                                </p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Numer <br />telefonu
@@ -81,6 +93,10 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 500 000 000'
                                     onChange={ e => setPhone(e.target.value)}
                                 />
+                                { failureStreet &&
+                                <p className='step-failure step-failure--phone'>
+                                    Podaj prawidłwy 9-cyfrowy numer telefonu
+                                </p>}
                             </label>
                         </div>
                         <div className='fourth-step-inputs'>
@@ -93,6 +109,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 2020/10/01'
                                     onChange={ e => setDate(e.target.value)}
                                 />
+                                { failureStreet && <p className='step-failure'>Podaj poprawną datą np. 2021/10/01</p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Godzina
@@ -102,6 +119,7 @@ function ThingsFourthStep({form,  onDoneStepFourth, onDoneStep}) {
                                     placeholder=' 13:30'
                                     onChange={ e => setTime(e.target.value)}
                                 />
+                                { failureStreet && <p className='step-failure'>Podaj poprawną godzinę np. 13:30</p>}
                             </label>
                             <label className='fourth-step-label'>
                                 Uwagi <br />do kuriera

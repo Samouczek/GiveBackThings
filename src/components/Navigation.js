@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import * as Scroll from 'react-scroll';
-import {HAND_OVER_THINGS, LOG_IN, LOG_OUT, REGISTRATION} from "../constants/Route";
+import {HAND_OVER_THINGS, HOME, LOG_IN, LOG_OUT, REGISTRATION} from "../constants/Route";
 import {useState} from "react";
 
 export default function Navigation({email}) {
@@ -26,9 +26,9 @@ export default function Navigation({email}) {
             </ul>
             <ul className='bottomMenu'>
                 <li className='bottomMenu-item'>
-                    <LinkScroll activeClass="active" to="headerElement" spy={true} smooth={true}>
+                    <Link to={HOME} >
                         Start
-                    </LinkScroll>
+                    </Link>
                 </li>
                 <li className='bottomMenu-item'>
                     <LinkScroll activeClass="active" to="simpleStepsElement" spy={true} smooth={true}>

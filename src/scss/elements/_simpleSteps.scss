@@ -16,7 +16,7 @@
   }
 
   .steps{
-    margin-top: 2.125rem;
+    padding-top: 2.125rem;
     width: 100%;
     background-color: $color-almost-white;
     padding-bottom: 3.875rem;
@@ -95,7 +95,8 @@
     font-size: 2.25rem;
     line-height: 2.8125rem;
     font-weight: 300;
-    margin: 2.1875rem;
+    margin-top: 2.1875rem;
+    margin-bottom: 5rem;
     justify-items: center;
     align-items: center;
   }

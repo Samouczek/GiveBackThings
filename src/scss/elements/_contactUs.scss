@@ -64,6 +64,7 @@
               font-size: 1.125rem;
               line-height: 1.5rem;
               padding-bottom: 0;
+              font-family: $font-base;
               &::placeholder{
                 color: $color-light-gray;
               }
@@ -84,6 +85,7 @@
 
 
       .btn--submit{
+        font-family: $font-base;
         width: 9.375rem;
         height: 3.125rem;
         font-size: 1.125rem;

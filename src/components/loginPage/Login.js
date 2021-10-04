@@ -61,7 +61,7 @@ function Login({login}) {
                             </label>
                             {passwordIncorrect &&
                             <div className='login-form-failure'>
-                                <p>Podane hasło jest za krótkie!!</p>
+                                <p>Podane hasło jest za krótkie!</p>
                             </div>
                             }
                         </div>

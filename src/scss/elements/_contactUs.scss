@@ -55,7 +55,7 @@
           align-items: stretch;
           .form__label{
             font-size: 1rem;
-            line-height: 3.8125rem;
+            line-height: 2rem;
             border-bottom: 0.75px solid $color-dark-gray;
             .form__input{
               width: 100%;
@@ -64,6 +64,7 @@
               font-size: 1.125rem;
               line-height: 1.5rem;
               padding-bottom: 0;
+              font-family: $font-base;
               &::placeholder{
                 color: $color-light-gray;
               }
@@ -71,6 +72,7 @@
             .message{
               height: 6rem;
               line-height: 1.5rem;
+              resize: none;
             }
           }
           .form-failure {
@@ -83,6 +85,7 @@
 
 
       .btn--submit{
+        font-family: $font-base;
         width: 9.375rem;
         height: 3.125rem;
         font-size: 1.125rem;

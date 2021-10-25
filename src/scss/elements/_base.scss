@@ -4,6 +4,10 @@ html, body {
   color: $color-dark-gray;
 }
 
+button{
+  font-family: $font-base;
+}
+
 * {
   box-sizing: border-box;
 }

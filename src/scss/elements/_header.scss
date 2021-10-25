@@ -1,7 +1,5 @@
 
 .header {
-  margin-right: 8.875rem;
-
   .image-header {
     display: none;
   }
@@ -96,8 +94,3 @@
   }
 }
 
-@media (min-width: $breakpoint-xl) {
-  .header{
-    padding-right: 8.75rem;
-  }
-}

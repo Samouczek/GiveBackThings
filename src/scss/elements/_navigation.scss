@@ -53,3 +53,8 @@ nav{
   }
 }
 
+@media (min-width: $breakpoint-xl) {
+  nav {
+    margin-right: 8.875rem;
+  }
+}

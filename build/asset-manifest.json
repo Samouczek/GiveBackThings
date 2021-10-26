@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/GiveBackThings/static/css/main.63baf033.chunk.css",
+    "main.js": "/GiveBackThings/static/js/main.84b03d50.chunk.js",
+    "main.js.map": "/GiveBackThings/static/js/main.84b03d50.chunk.js.map",
+    "runtime-main.js": "/GiveBackThings/static/js/runtime-main.dfc00ae6.js",
+    "runtime-main.js.map": "/GiveBackThings/static/js/runtime-main.dfc00ae6.js.map",
+    "static/js/2.b2ac0546.chunk.js": "/GiveBackThings/static/js/2.b2ac0546.chunk.js",
+    "static/js/2.b2ac0546.chunk.js.map": "/GiveBackThings/static/js/2.b2ac0546.chunk.js.map",
+    "index.html": "/GiveBackThings/index.html",
+    "static/css/main.63baf033.chunk.css.map": "/GiveBackThings/static/css/main.63baf033.chunk.css.map",
+    "static/js/2.b2ac0546.chunk.js.LICENSE.txt": "/GiveBackThings/static/js/2.b2ac0546.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/GiveBackThings/static/media/Signature.8f2a001d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dfc00ae6.js",
+    "static/js/2.b2ac0546.chunk.js",
+    "static/css/main.63baf033.chunk.css",
+    "static/js/main.84b03d50.chunk.js"
+  ]
+}
